@@ -4,276 +4,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="portfolio, developer, projects, creative">
-    <title>Stephen-Wa's Portfolio</title>
+    <meta name="keywords" content="portfolio, web developer, python, react, html">
+    <title>Stephen-Wa Portfolio</title>
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+
     <!--Dev icons -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <link href="assets/font/stylesheet.css" rel="stylesheet" type="text/css">
+
     <link href="css/main.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        .back {
+            background-color: rgba(12, 26, 46, 0.8);
+        }
+
+        #hello {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #dev {
+            color: #f96d15;
+        }
+
+        .text-white {
+            color: white !important;
+        }
+
+        .skills-header, .about-header, .heading {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .newsgrid_tp {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .newsgrid_tp:hover {
+            transform: scale(1.05);
+        }
+
+        .newsgrid_tp img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news_bt {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .news_bt h4 {
+            font-size: 24px;
+        }
+
+        .news_bt p {
+            font-size: 16px;
+        }
+
+        .contact-grid-right input,
+        .contact-grid-right textarea {
+            background-color: #333;
+            border: none;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .contact-grid-right input[type="submit"] {
+            background-color: #f96d15;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-grid-right input[type="submit"]:hover {
+            background-color: #e65c00;
+        }
+
+        footer .list-inline {
+            padding: 0;
+            margin: 0;
+        }
+
+        footer .list-inline-item {
+            margin-right: 10px;
+        }
+
+        footer .btn-floating {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        footer .btn-floating i {
+            color: white;
+        }
+
+    </style>
 </head>
 
-<style>
-    body {
-        background-color: #0c1a2e;
-        color: white;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    #hello {
-        font-size: 60px;
-        text-align: center;
-    }
-
-    .home-text-large {
-        font-size: 48px;
-    }
-
-    .home-text {
-        font-size: 36px;
-        margin-top: 20px;
-    }
-
-    .bounce {
-        animation: bounce 2s infinite;
-    }
-
-    .arrow a {
-        display: inline-block;
-    }
-
-    /* Navigation */
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 999;
-        background: rgba(0, 0, 0, 0.7);
-        padding: 15px 0;
-    }
-
-    nav a {
-        color: white;
-        margin: 0 15px;
-        font-weight: bold;
-    }
-
-    /* About Section */
-    #about {
-        padding: 80px 0;
-        background-color: rgba(12, 26, 46, 0.8);
-        text-align: center;
-    }
-
-    /* Skills Section */
-    .skills-header {
-        margin-top: 40px;
-        font-size: 30px;
-        text-transform: uppercase;
-    }
-
-    .skill-details {
-        margin-top: 60px;
-    }
-
-    .skillset {
-        margin-top: 30px;
-    }
-
-    .skillset .list-inline-item {
-        font-size: 30px;
-        margin: 0 15px;
-    }
-
-    /* Project Section */
-    #work {
-        background-color: #1b2631;
-        padding: 80px 0;
-        color: white;
-    }
-
-    .newsgrid_tp {
-        border-radius: 15px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .newsgrid_tp img {
-        width: 100%;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .newsgrid_tp:hover img {
-        transform: scale(1.05);
-    }
-
-    .news_bt h4 {
-        font-size: 20px;
-        margin-top: 20px;
-    }
-
-    .news_bt p {
-        font-size: 14px;
-    }
-
-    /* Contact Section */
-    .contact-details {
-        padding: 80px 0;
-        background-color: #0c1a2e;
-        color: white;
-    }
-
-    .submit_btn input[type="submit"] {
-        background-color: #f96d15;
-        border: none;
-        color: white;
-        font-size: 16px;
-        padding: 10px 30px;
-        cursor: pointer;
-    }
-
-    .submit_btn input[type="submit"]:hover {
-        background-color: #ff7f32;
-    }
-</style>
-
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">Stephen-Wa</a>
-        <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="#about">About</a>
-            <a class="nav-item nav-link" href="#skills">Skills</a>
-            <a class="nav-item nav-link" href="#work">Projects</a>
-            <a class="nav-item nav-link" href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Landing Page -->
+    <!--Landing page -->
     <div class="background">
-        <div class="overlay">
-            <div class="content">
-                <div class="home-content">
-                    <h1 id="hello">Hello,</h1>
-                    <h2 id="iam">I'm Stephen-Wa, a</h2>
-                    <h2 class="home-text">
-                        <span class="angle-b">&lt; </span>
-                        <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Developer", "Innovator", "Learner" ]'></span>
-                        <span class="angle-b"> &gt;</span>
-                    </h2>
-                    <div class="arrow bounce">
-                        <a class="fa fa-angle-double-down fa-3x" href="#about"></a>
+        <div id="particles">
+            <div class="overlay">
+                <div class="content">
+                    <div class="home-content">
+                        <h1 class="text-center text-white home-text-large" id="hello">H<span id="e">e</span>ll<span
+                                id="e" color="#f96d15;">o</span>,</h1>
+                        <h2 class="text-center text-white home-text" id="iam">I'm <span id="o">Stephen-Wa</span>, and I'm a</h2>
+                        <h2 class="text-center text-white home-text"><span class="angle-b">&lt;</span>
+                            <span id="dev" class="txt-rotate" data-period="2000"
+                                  data-rotate='[ "Pythonista", "Developer.", "Learner." ]'></span>
+                            <span class="angle-b">&gt;</span></h2>
+
+                        <div class="arrow bounce">
+                            <a class="fa fa-angle-double-down fa-3x" href="#b"></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Landing Page -->
+    <!-- End Landing page -->
 
-    <!-- About Section -->
+    <!-- About-->
     <section id="about">
-        <div class="about-content">
-            <h3 class="about-header">About Me</h3>
-            <p>
-                I am a passionate software engineer and a creative developer with a focus on full-stack development, AI, and automation. I strive to build elegant and efficient solutions that drive innovation and make an impact.
-                <br>
-                When I’m not coding, I enjoy exploring the intersection of technology, design, and sustainability.
-            </p>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
+        <div class="about-content ml-4">
+            <h3 class="pt-5 pb-4 about-header text-center">About Me</h3>
+            <div id="about-desc" class="">
+                <p class="about-text pb-5 pt-3 mx-2">
+                    I am a <span class="whoami"><u>Software engineer</u></span> and a <span class="whoami"><u>full stack developer</u></span>. <br>
+                    I love figuring out the building blocks of things and <br> rearranging them to make something even better.<br><br>
+                    I am very interested in the intersection of code, science <br> and agriculture.<br>
+                    When not writing code, I enjoy writing down my ideas, meditating and <br> driving.
+                </p>
+            </div>
+        </div>
+        <div id="line-divider"></div>
+
         <div class="skill-details">
-            <h3 class="skills-header">Skills</h3>
+            <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
             <div class="container">
-                <ul class="list-unstyled list-inline text-center">
-                    <li class="list-inline-item">
-                        <a href="https://www.w3schools.com/html/" target="_blank">
-                            <i class="devicon-html5-plain colored"></i>
-                            <h4>HTML5</h4>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.w3schools.com/css/" target="_blank">
-                            <i class="devicon-css3-plain colored"></i>
-                            <h4>CSS3</h4>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.typescriptlang.org/" target="_blank">
-                            <i class="devicon-typescript-plain colored"></i>
-                            <h4>Typescript</h4>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.javascript.com/" target="_blank">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <h4>Javascript</h4>
-                        </a>
-                    </li>
-                </ul>
+                <div>
+                    <ul class="list-unstyled list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://www.w3schools.com/html/" target="_blank">
+                                <figure>
+                                    <i class="devicon-html5-plain colored"></i>
+                                    <figcaption>HTML5</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.w3schools.com/css/" target="_blank">
+                                <figure>
+                                    <i class="devicon-css3-plain colored"></i>
+                                    <figcaption>CSS3</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.typescriptlang.org/" target="_blank">
+                                <figure>
+                                    <i class="devicon-typescript-plain colored"></i>
+                                    <figcaption>Typescript</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.javascript.com/" target="_blank">
+                                <figure>
+                                    <i class="devicon-javascript-plain colored"></i>
+                                    <figcaption>Javascript</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-unstyled list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://reactjs.org/" target="_blank">
+                                <figure>
+                                    <i class="devicon-react-plain colored"></i>
+                                    <figcaption>React</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.python.org/" target="_blank">
+                                <figure>
+                                    <i class="devicon-python-plain colored"></i>
+                                    <figcaption>Python</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://reactnative.dev/" target="_blank">
+                                <figure>
+                                    <i class="devicon-react-native-plain colored"></i>
+                                    <figcaption>React-Native</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://nodejs.org/" target="_blank">
+                                <figure>
+                                    <i class="devicon-nodejs-plain colored"></i>
+                                    <figcaption>Node.js</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="work">
+    <!-- Works Section -->
+    <section class="news text-center" id="work">
         <div class="container">
-            <h3 class="heading">My Works</h3>
-            <div class="row">
-                <div class="col-md-4">
+            <h3 class="heading text-capitalize"> My Projects </h3>
+            <p class="subs mt-4">Below are some projects I committed to working on.</p>
+            <div class="row news-grids mt-5">
+                <div class="col-lg-4 col-md-6 newsgrid1">
                     <div class="newsgrid_tp">
-                        <img src="assets/images/ai_tech.png" alt="AI-Powered Chatbot">
+                        <img src="assets/images/project1.jpg" alt="news image" class="img-fluid">
                         <div class="news_bt">
-                            <h4>AI-Powered Chatbot</h4>
-                            <p>This intelligent chatbot provides customer support with real-time problem-solving, improving user experience.</p>
+                            <h4>SunCity</h4>
+                            <p class="mt-4"> A fully automated city with wireless electric transmission. </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-lg-4 col-md-6  newsgrid2">
                     <div class="newsgrid_tp">
-                        <img src="assets/images/smart_agriculture.png" alt="Smart Agriculture System">
+                        <img src="assets/images/project2.jpg" alt="news image" class="img-fluid">
                         <div class="news_bt">
-                            <h4>Smart Agriculture System</h4>
-                            <p>A technology-driven solution for optimizing farming processes using IoT sensors to monitor crop health and soil moisture.</p>
+                            <h4>Steve-Labs</h4>
+                            <p class="mt-4"> Steve-labs will revolutionize healthcare. </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-lg-4 col-md-6  newsgrid5">
                     <div class="newsgrid_tp">
-                        <img src="assets/images/eco_energy.png" alt="Eco-Friendly Energy Grid">
+                        <img src="assets/images/project3.jpg" class="img-fluid">
                         <div class="news_bt">
-                            <h4>Eco-Friendly Energy Grid</h4>
-                            <p>Renewable energy solutions that reduce carbon footprints and make sustainable energy more accessible to remote areas.</p>
+                            <h4>KingsNet</h4>
+                            <p class="mt-4"> A virtual school revolutionizing tech education. </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-lg-4 col-md-6 mt-md-5 mt-5 newsgrid1">
                     <div class="newsgrid_tp">
-                        <img src="assets/images/fintech.png" alt="FinTech Platform">
+                        <img src="assets/images/project4.jpg" alt="news image" class="img-fluid">
                         <div class="news_bt">
-                            <h4>FinTech Platform</h4>
-                            <p>An all-in-one platform for managing investments, trading, and personal finance with an emphasis on security and usability.</p>
+                            <h4>Star-X</h4>
+                            <p class="mt-4"> A project to educate about rocketry and space. </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+
+                <div class="col-lg-4 col-md-6 mt-md-5 mt-5 newsgrid2">
                     <div class="newsgrid_tp">
-                        <img src="assets/images/healthtech.png" alt="HealthTech App">
+                        <img src="assets/images/project5.jpg" alt="news image" class="img-fluid">
                         <div class="news_bt">
-                            <h4>HealthTech App</h4>
-                            <p>A wellness-focused mobile application designed to personalize fitness routines and provide actionable health insights based on user data.</p>
+                            <h4>Hydra-Farm</h4>
+                            <p class="mt-4"> Encouraging sustainable agriculture. </p>
                         </div>
                     </div>
                 </div>
@@ -281,26 +312,16 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="contact-details">
-            <h3 class="contacts-header text-center">Contact Me</h3>
-            <form action="http://eepurl.com/hjBUyn" method="post">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <input type="text" name="Name" placeholder="First Name" required>
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="email" name="Email" placeholder="Email" required>
-                    </div>
-                </div>
-                <textarea name="Message" placeholder="Your Message" required></textarea>
-                <div class="submit_btn">
-                    <input type="submit" value="Send Message">
-                </div>
-            </form>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white">
+        <div class="footer-content">
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="mailto:your-email@example.com">Email</a></li>
+                <li class="list-inline-item"><a href="https://github.com/your-username" target="_blank">GitHub</a></li>
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+            </ul>
         </div>
-    </section>
+    </footer>
 
 </body>
 
