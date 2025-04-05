@@ -14,124 +14,75 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
     <!--Dev icons -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="assets/font/stylesheet.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
-
-    <style>
-        #id {
-            text-align: center;
-        }
-
-        .back {
-            background-color: rgba(12, 26, 46, 0.8);
-        }
-
-        .skill-details i {
-            font-size: 50px;
-            color: #f96d15;
-        }
-
-        .skill-details a:hover i {
-            color: #f96d15;
-        }
-
-        .skill-details h5 {
-            color: #fff;
-        }
-
-        .skill-details a {
-            text-decoration: none;
-        }
-
-        .home-text-large {
-            font-size: 4rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .home-text {
-            font-size: 2rem;
-            color: #fff;
-        }
-
-        .arrow {
-            margin-top: 20px;
-        }
-
-        .arrow .fa {
-            color: #fff;
-        }
-
-        .newsgrid_tp {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .newsgrid_tp img {
-            width: 100%;
-            transition: transform 0.3s ease;
-        }
-
-        .newsgrid_tp:hover img {
-            transform: scale(1.1);
-        }
-
-        .news_bt {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 10px;
-        }
-    </style>
 </head>
+
+<style>
+   #id {
+       text-align: center;
+   }
+   .back {
+       background-color: rgba(12, 26, 46, 0.8);
+   }
+   .text-white {
+       color: white;
+   }
+   .text-center {
+       text-align: center;
+   }
+   .home-text-large {
+       font-size: 48px;
+   }
+   .home-text {
+       font-size: 36px;
+   }
+   .bounce {
+       animation: bounce 2s infinite;
+   }
+   .arrow a {
+       display: inline-block;
+   }
+</style>
 
 <body>
     <!-- Navbar -->
 
-    <!-- End Navbar -->
-
-    <!-- Landing page -->
+    <!-- Landing Page -->
     <div class="background">
         <div id="particles">
             <div class="overlay">
                 <div class="content">
                     <div class="home-content">
-                        <h1 class="text-center text-white home-text-large" id="hello">
-                            H<span id="e">e</span>ll<span id="e" color="#f96d15;">o</span>,
-                        </h1>
-                        <h2 class="text-center text-white home-text" id="iam">
-                            I'm <span id="o">Stephen-Wa</span>, and I'm a
-                        </h2>
+                        <h1 class="text-center text-white home-text-large" id="hello">H<span id="e">e</span>ll<span id="e" color="#f96d15;">o</span>,</h1>
+                        <h2 class="text-center text-white home-text" id="iam">I'm <span id="o">Stephen-Wa</span>, and I'm a</h2>
                         <h2 class="text-center text-white home-text">
                             <span class="angle-b">&lt; </span>
-                            <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Pythonista", "Developer.", "Learner." ]'> </span>
+                            <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Pythonista", "Developer.", "Learner." ]'></span>
                             <span class="angle-b"> &gt;</span>
                         </h2>
-
                         <div class="arrow bounce">
-                            <a class="fa fa-angle-double-down fa-3x" href="#about"></a>
+                            <a class="fa fa-angle-double-down fa-3x" href="#b"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Landing page -->
+    <!-- End Landing Page -->
 
     <!-- About -->
     <section id="about">
         <div class="about-content ml-4">
             <h3 class="pt-5 pb-4 about-header text-center">About Me</h3>
-            <div id="about-desc">
+            <div id="about-desc" class="">
                 <p class="about-text pb-5 pt-3 mx-2">
-                    I am a <span class="whoami"><u>Software engineer </u></span> and a <span class="whoami"><u>full-stack developer</u></span>. <br>
-                    I love figuring out the building blocks of things and <br> rearranging them to make something even better.<br><br>
-                    I am very interested in the intersection of code, science <br> and agriculture.<br>
-                    When not writing code, I enjoy writing down my ideas, meditating, and <br> driving.
+                    I am a <span class="whoami"><u>Software Engineer</u></span> and a <span class="whoami"><u>Full Stack Developer</u></span>.
+                    I love figuring out the building blocks of things and rearranging them to make something even better.<br><br>
+                    I'm interested in the intersection of code, science, and agriculture.<br>
+                    When not writing code, I enjoy writing down my ideas, meditating, and driving.
                 </p>
             </div>
         </div>
@@ -140,41 +91,82 @@
         <div class="skill-details">
             <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-2 col-md-4">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-                            <i class="devicon-html5-plain colored"></i>
-                            <h5>HTML5</h5>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-                            <i class="devicon-css3-plain colored"></i>
-                            <h5>CSS3</h5>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <h5>JavaScript</h5>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a href="https://www.python.org/" target="_blank">
-                            <i class="devicon-python-plain colored"></i>
-                            <h5>Python</h5>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <a href="https://reactjs.org/" target="_blank">
-                            <i class="devicon-react-plain colored"></i>
-                            <h5>React</h5>
-                        </a>
-                    </div>
+                <div>
+                    <ul class="list-unstyled list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://www.w3schools.com/html/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-html5-plain colored"></i>
+                                    <figcaption class="text-center">HTML5</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.w3schools.com/css/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-css3-plain colored"></i>
+                                    <figcaption class="text-center">CSS3</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.typescriptlang.org/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-typescript-plain colored"></i>
+                                    <figcaption class="text-center">Typescript</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-javascript-plain colored"></i>
+                                    <figcaption class="text-center">Javascript</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-unstyled list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://reactjs.org/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-react-plain colored"></i>
+                                    <figcaption class="text-center">React</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.python.org/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-python-plain colored"></i>
+                                    <figcaption class="text-center">Python</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://reactnative.dev/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-react-native-plain colored"></i>
+                                    <figcaption class="text-center">React-Native</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://nodejs.org/" target="_blank" class="mx-2">
+                                <figure>
+                                    <i class="devicon-nodejs-plain colored"></i>
+                                    <figcaption class="text-center">Node.js</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End About -->
 
     <!-- Projects -->
     <section class="news text-center" id="work">
@@ -184,34 +176,53 @@
             <div class="row news-grids mt-5">
                 <div class="col-lg-4 col-md-6 newsgrid1">
                     <div class="newsgrid_tp new_grd">
-                        <img src="assets/images/pitch.png" alt="news image" class="img-fluid">
+                        <img src="assets/images/ai_tech.png" alt="news image" class="img-fluid">
                         <div class="news_bt">
-                            <h4>SunCity</h4>
-                            <p class="mt-4">A fully automated city with wireless electric transmission.</p>
+                            <h4>AI-Powered Chatbot</h4>
+                            <p class="mt-4">A conversational AI chatbot that provides 24/7 customer support for websites. Powered by advanced machine learning algorithms, it helps businesses automate customer interactions.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 newsgrid2">
                     <div class="newsgrid_tp new_grd1">
-                        <img src="assets/images/galler.png" alt="news image" class="img-fluid">
+                        <img src="assets/images/smart_agriculture.png" alt="news image" class="img-fluid">
                         <div class="news_bt">
-                            <h4>Steve-Labs</h4>
-                            <p class="mt-4">Steve-labs will revolutionize the healthcare community by changing the way patients are undertaken.</p>
+                            <h4>Smart Agriculture System</h4>
+                            <p class="mt-4">A system that integrates IoT sensors and cloud computing to optimize water usage, monitor crop health, and increase the efficiency of farming operations through data analytics.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 newsgrid5">
                     <div class="newsgrid_tp new_grd1">
-                        <img src="assets/images/delani.png" class="img-fluid">
+                        <img src="assets/images/eco_energy.png" class="img-fluid">
                         <div class="news_bt">
-                            <h4>KingsNet</h4>
-                            <p class="mt-4">KingsNet is a virtual school aimed at terraforming those with little knowledge about the newest trends in tech!</p>
+                            <h4>Eco-Friendly Energy Grid</h4>
+                            <p class="mt-4">A sustainable energy solution using solar panels and battery storage to provide clean, off-grid electricity for remote areas, helping reduce carbon footprints.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 newsgrid4">
+                    <div class="newsgrid_tp new_grd2">
+                        <img src="assets/images/fintech.png" class="img-fluid">
+                        <div class="news_bt">
+                            <h4>FinTech Platform</h4>
+                            <p class="mt-4">A comprehensive platform that integrates various financial services like lending, investing, and trading. Users can manage their finances in one seamless interface.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 newsgrid3">
+                    <div class="newsgrid_tp new_grd3">
+                        <img src="assets/images/healthtech.png" class="img-fluid">
+                        <div class="news_bt">
+                            <h4>HealthTech Application</h4>
+                            <p class="mt-4">A mobile app for personalized health and wellness advice, leveraging AI to suggest fitness routines, dietary plans, and mental health tips based on user data.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End Projects -->
 
     <!-- Contact -->
     <section class="wedo" id="contact">
@@ -229,41 +240,22 @@
                                 <div class="col-sm-6">
                                     <input type="email" name="Email" placeholder="Email" required="">
                                 </div>
+                            </div>    
+                            <div class="row contact_bottom">
+                                <div class="col-sm-12">
+                                    <textarea name="Message" placeholder="Your Message" required=""></textarea>
+                                </div>
                             </div>
-                            <input type="text" name="Name" placeholder="Second Name" required="">
-                            <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-                            <input type="submit" value="Send Message">
-                            <input type="reset" value="Clear Form">
-                            <div class="clearfix"> </div>
+                            <div class="submit_btn mt-5">
+                                <input type="submit" value="Send">
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End Contact -->
 
-    <!-- Footer -->
-    <footer class="page-footer font-small pt-4">
-        <div class="container">
-            <!-- Social buttons -->
-            <ul class="list-unstyled list-inline text-center">
-                <li class="list-inline-item">
-                    <a href="https://www.linkedin.com" class="btn btn-outline-light btn-floating mx-2" role="button">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://github.com" class="btn btn-outline-light btn-floating mx-2" role="button">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
 </body>
 </html>
