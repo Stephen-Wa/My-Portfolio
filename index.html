@@ -14,260 +14,256 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
     <!--Dev icons -->
-    <link rel="stylesheet"
-        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="assets/font/stylesheet.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
 
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .background {
-            background-color: rgba(12, 26, 46, 0.8);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .home-content {
+        #id {
             text-align: center;
         }
 
-        #hello {
-            font-size: 3rem;
-            color: white;
+        .back {
+            background-color: rgba(12, 26, 46, 0.8);
         }
 
-        #iam, .home-text {
-            color: white;
+        .skill-details i {
+            font-size: 50px;
+            color: #f96d15;
+        }
+
+        .skill-details a:hover i {
+            color: #f96d15;
+        }
+
+        .skill-details h5 {
+            color: #fff;
+        }
+
+        .skill-details a {
+            text-decoration: none;
+        }
+
+        .home-text-large {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .home-text {
             font-size: 2rem;
-        }
-
-        #dev {
-            font-weight: bold;
+            color: #fff;
         }
 
         .arrow {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
-        #about, #work, #contact {
-            padding: 60px 0;
-            background-color: #f9f9f9;
+        .arrow .fa {
+            color: #fff;
         }
 
-        .about-content {
-            text-align: center;
-        }
-
-        .skills-header, .heading, .contacts-header {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .skills-header, .about-header, .work-header, .contacts-header {
-            text-align: center;
-        }
-
-        .list-inline-item {
-            margin: 0 20px;
-        }
-
-        .newsgrid1, .newsgrid2, .newsgrid5 {
+        .newsgrid_tp {
             position: relative;
-            margin-bottom: 30px;
+            overflow: hidden;
         }
 
         .newsgrid_tp img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .newsgrid_tp:hover img {
+            transform: scale(1.1);
         }
 
         .news_bt {
             position: absolute;
             bottom: 10px;
-            left: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            color: white;
-            border-radius: 5px;
-        }
-
-        .news_bt h4 {
-            margin-bottom: 10px;
-        }
-
-        .news_bt p {
-            font-size: 1rem;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 30px 0;
-        }
-
-        .footer-copyright {
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        .footer-copyright a {
-            color: #61dafb;
-        }
-
-        .contact-details form input,
-        .contact-details form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        .contact-details form input[type="submit"],
-        .contact-details form input[type="reset"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .contact-details form input[type="submit"]:hover,
-        .contact-details form input[type="reset"]:hover {
-            background-color: #45a049;
+            left: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px;
         }
     </style>
 </head>
 
 <body>
-    <!-- Landing Page -->
+    <!-- Navbar -->
+
+    <!-- End Navbar -->
+
+    <!-- Landing page -->
     <div class="background">
-        <div class="home-content">
-            <h1 id="hello">H<span id="e">e</span>ll<span id="e" style="color:#f96d15;">o</span>,</h1>
-            <h2 id="iam">I'm <span id="o">Stephen-Wa</span>, and I'm a</h2>
-            <h2>
-                <span class="angle-b">&lt; </span>
-                <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Pythonista", "Developer.", "Learner." ]'></span>
-                <span class="angle-b"> &gt;</span>
-            </h2>
-            <div class="arrow bounce">
-                <a class="fa fa-angle-double-down fa-3x" href="#about"></a>
+        <div id="particles">
+            <div class="overlay">
+                <div class="content">
+                    <div class="home-content">
+                        <h1 class="text-center text-white home-text-large" id="hello">
+                            H<span id="e">e</span>ll<span id="e" color="#f96d15;">o</span>,
+                        </h1>
+                        <h2 class="text-center text-white home-text" id="iam">
+                            I'm <span id="o">Stephen-Wa</span>, and I'm a
+                        </h2>
+                        <h2 class="text-center text-white home-text">
+                            <span class="angle-b">&lt; </span>
+                            <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Pythonista", "Developer.", "Learner." ]'> </span>
+                            <span class="angle-b"> &gt;</span>
+                        </h2>
+
+                        <div class="arrow bounce">
+                            <a class="fa fa-angle-double-down fa-3x" href="#about"></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- End Landing page -->
 
-    <!-- About Me Section -->
+    <!-- About -->
     <section id="about">
-        <div class="about-content">
-            <h3 class="about-header">About Me</h3>
-            <p class="about-text">I am a <span class="whoami"><u>Software Engineer</u></span> and a <span class="whoami"><u>Full Stack Developer</u></span>.</p>
-            <p>I love figuring out the building blocks of things and rearranging them to make something even better.</p>
-            <p>I am passionate about the intersection of code, science, and agriculture.</p>
-            <p>When not writing code, I enjoy writing my ideas, meditating, and driving.</p>
+        <div class="about-content ml-4">
+            <h3 class="pt-5 pb-4 about-header text-center">About Me</h3>
+            <div id="about-desc">
+                <p class="about-text pb-5 pt-3 mx-2">
+                    I am a <span class="whoami"><u>Software engineer </u></span> and a <span class="whoami"><u>full-stack developer</u></span>. <br>
+                    I love figuring out the building blocks of things and <br> rearranging them to make something even better.<br><br>
+                    I am very interested in the intersection of code, science <br> and agriculture.<br>
+                    When not writing code, I enjoy writing down my ideas, meditating, and <br> driving.
+                </p>
+            </div>
         </div>
+        <div id="line-divider"></div>
 
-        <!-- Skills Section -->
         <div class="skill-details">
-            <h3 class="skills-header">Skills</h3>
+            <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-3 text-center">
-                        <i class="devicon-html5-plain colored"></i>
-                        <p>HTML5</p>
+                    <div class="col-lg-2 col-md-4">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+                            <i class="devicon-html5-plain colored"></i>
+                            <h5>HTML5</h5>
+                        </a>
                     </div>
-                    <div class="col-md-3 text-center">
-                        <i class="devicon-css3-plain colored"></i>
-                        <p>CSS3</p>
+                    <div class="col-lg-2 col-md-4">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+                            <i class="devicon-css3-plain colored"></i>
+                            <h5>CSS3</h5>
+                        </a>
                     </div>
-                    <div class="col-md-3 text-center">
-                        <i class="devicon-javascript-plain colored"></i>
-                        <p>JavaScript</p>
+                    <div class="col-lg-2 col-md-4">
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <h5>JavaScript</h5>
+                        </a>
                     </div>
-                    <div class="col-md-3 text-center">
-                        <i class="devicon-python-plain colored"></i>
-                        <p>Python</p>
+                    <div class="col-lg-2 col-md-4">
+                        <a href="https://www.python.org/" target="_blank">
+                            <i class="devicon-python-plain colored"></i>
+                            <h5>Python</h5>
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Section -->
-    <section id="work">
-        <h3 class="heading">My Works</h3>
-        <div class="row">
-            <!-- Work 1 -->
-            <div class="col-md-4">
-                <div class="newsgrid1">
-                    <img src="assets/images/pitch.png" alt="Work Image">
-                    <div class="news_bt">
-                        <h4>SunCity</h4>
-                        <p>A fully automated city with wireless electric transmission.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Work 2 -->
-            <div class="col-md-4">
-                <div class="newsgrid2">
-                    <img src="assets/images/galler.png" alt="Work Image">
-                    <div class="news_bt">
-                        <h4>Steve-Labs</h4>
-                        <p>Revolutionizing healthcare by improving patient management.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Work 3 -->
-            <div class="col-md-4">
-                <div class="newsgrid5">
-                    <img src="assets/images/delani.png" alt="Work Image">
-                    <div class="news_bt">
-                        <h4>KingsNet</h4>
-                        <p>Education platform for tech enthusiasts.</p>
+                    <div class="col-lg-2 col-md-4">
+                        <a href="https://reactjs.org/" target="_blank">
+                            <i class="devicon-react-plain colored"></i>
+                            <h5>React</h5>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Me Section -->
-    <section id="contact">
+    <!-- Projects -->
+    <section class="news text-center" id="work">
+        <div class="container">
+            <h3 class="heading text-capitalize"> My works </h3>
+            <p class="subs mt-4">Below are some projects I committed to working on.</p>
+            <div class="row news-grids mt-5">
+                <div class="col-lg-4 col-md-6 newsgrid1">
+                    <div class="newsgrid_tp new_grd">
+                        <img src="assets/images/pitch.png" alt="news image" class="img-fluid">
+                        <div class="news_bt">
+                            <h4>SunCity</h4>
+                            <p class="mt-4">A fully automated city with wireless electric transmission.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 newsgrid2">
+                    <div class="newsgrid_tp new_grd1">
+                        <img src="assets/images/galler.png" alt="news image" class="img-fluid">
+                        <div class="news_bt">
+                            <h4>Steve-Labs</h4>
+                            <p class="mt-4">Steve-labs will revolutionize the healthcare community by changing the way patients are undertaken.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 newsgrid5">
+                    <div class="newsgrid_tp new_grd1">
+                        <img src="assets/images/delani.png" class="img-fluid">
+                        <div class="news_bt">
+                            <h4>KingsNet</h4>
+                            <p class="mt-4">KingsNet is a virtual school aimed at terraforming those with little knowledge about the newest trends in tech!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="wedo" id="contact">
         <div class="contact-details">
-            <h3 class="contacts-header">Contact Me</h3>
-            <p class="text-center">Any thoughts or comments or want to view some of my work? Please contact me below.</p>
-            <form action="http://eepurl.com/hjBUyn" method="post">
-                <input type="text" name="Name" placeholder="First Name" required="">
-                <input type="email" name="Email" placeholder="Email" required="">
-                <input type="text" name="Second Name" placeholder="Second Name" required="">
-                <textarea name="Message" required="">Message...</textarea>
-                <input type="submit" value="Send Message">
-                <input type="reset" value="Clear Form">
-            </form>
+            <h3 class="contacts-header text-center pt-5 pb-2 mt-5 mb-1">Contact Me</h3>
+            <div class="contacts">
+                <div class="container">
+                    <p class="subs mt-4 text-center">Any thoughts or comments or want to view some of my work? Please contact me below.</p>
+                    <div class="contact_grid_right mt-5 mx-auto text-center">
+                        <form action="http://eepurl.com/hjBUyn" method="post">
+                            <div class="row contact_top">
+                                <div class="col-sm-6">
+                                    <input type="text" name="Name" placeholder="First Name" required="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="email" name="Email" placeholder="Email" required="">
+                                </div>
+                            </div>
+                            <input type="text" name="Name" placeholder="Second Name" required="">
+                            <textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+                            <input type="submit" value="Send Message">
+                            <input type="reset" value="Clear Form">
+                            <div class="clearfix"> </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- Footer -->
-        <footer>
-            <ul class="list-unstyled list-inline text-center">
-                <li class="list-inline-item"><a href="https://twitter.com/StephenWa" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a href="mailto:Stephenwa286@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-                <li class="list-inline-item"><a href="https://www.linkedin.com/in/Stephen-Wa/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                <li class="list-inline-item"><a href="https://github.com/Stephen-Wa" target="_blank"><i class="fab fa-github"></i></a></li>
-            </ul>
-            <div class="footer-copyright">© 2025 Copyright: <a href="#"> Stephen-Wa</a></div>
-        </footer>
     </section>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small pt-4">
+        <div class="container">
+            <!-- Social buttons -->
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com" class="btn btn-outline-light btn-floating mx-2" role="button">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com" class="btn btn-outline-light btn-floating mx-2" role="button">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>
