@@ -8,339 +8,203 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Roboto:wght@300;400;500&display=swap">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
     <!--Dev icons -->
-    <link rel="stylesheet"
-        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="assets/font/stylesheet.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <style>
+        /* Cosmic Background */
+        body {
+            background: radial-gradient(circle, rgba(34,34,34,1) 0%, rgba(13,26,46,1) 100%);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/cosmic_background.jpg') center center no-repeat;
+            background-size: cover;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Glow effect for text */
+        .home-text-large, .home-text {
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #00ff77;
+        }
+
+        /* Neon Button */
+        .btn-neon {
+            background: transparent;
+            border: 2px solid #0ff;
+            color: #0ff;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon:hover {
+            background-color: #0ff;
+            color: black;
+            box-shadow: 0 0 20px #0ff, 0 0 30px #00ff77;
+        }
+
+        /* Glowing effect on skills section */
+        .devicon {
+            animation: glitch 1.5s infinite;
+        }
+
+        /* Animation Effects */
+        @keyframes glow {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0) skew(0deg);
+            }
+            25% {
+                transform: translate(-10px, 10px) skew(5deg);
+            }
+            50% {
+                transform: translate(10px, -10px) skew(-5deg);
+            }
+            75% {
+                transform: translate(-10px, -10px) skew(5deg);
+            }
+            100% {
+                transform: translate(10px, 10px) skew(-5deg);
+            }
+        }
+
+        /* Contact form */
+        input[type="text"], input[type="email"], textarea {
+            background-color: rgba(0, 255, 255, 0.1);
+            border: 2px solid #0ff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: #0ff;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #00ff77;
+        }
+    </style>
 </head>
-
-<style>
-   #id{
-       text-align: center;
-   }
-   .back{
-       background-color: rgba(12, 26, 46, 0.8);
-   }
- </style>
-
-
-
 <body>
-    <!--Navbar -->
 
-    <!--End Navbar -->
-
-    <!--Landing page -->
+    <!-- Landing Page -->
     <div class="background">
-        <div id="particles">
-            <div class="overlay">
-                <div class="content">
-                    <div class="home-content">
-                        <h1 class="text-center text-white  home-text-large" id="hello">H<span id="e">e</span>ll<span
-                                id="e" color="#f96d15;">o</span>,
-                        </h1>
-                        <h2 class="text-center text-white home-text" id="iam">I'm <span id="o">Stephen-Wa</span>, and i'm a
-                        </h2>
-                        <h2 class="text-center text-white home-text"><span class="angle-b">&lt; </span>
-                            <span id="dev" class="txt-rotate" data-period="2000"
-                                data-rotate='[ "Pythonista", "Developer.", "Learner." ]'> </span>
-                            <span class="angle-b"> &gt;</span></h2>
-
-                            <div class="arrow bounce">
-        <a class="fa fa-angle-double-down fa-3x" href="#b"></a>
-    </div>
+        <div class="overlay">
+            <div class="content">
+                <div class="home-content">
+                    <h1 class="text-center home-text-large" id="hello">H<span id="e">e</span>ll<span id="e" color="#f96d15;">o</span>,</h1>
+                    <h2 class="text-center home-text" id="iam">I'm <span id="o">Stephen-Wa</span>, and I'm a</h2>
+                    <h2 class="text-center home-text">
+                        <span class="angle-b">&lt;</span>
+                        <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Pythonista", "Developer.", "Learner." ]'></span>
+                        <span class="angle-b"> &gt;</span>
+                    </h2>
+                    <div class="arrow bounce">
+                        <a class="fa fa-angle-double-down fa-3x" href="#b"></a>
                     </div>
                 </div>
             </div>
-            
         </div>
-        
     </div>
-    </div>
-    <!-- End Landing page -->
+    <!-- End Landing Page -->
 
-    <!-- About-->
+    <!-- About Section -->
     <section id="about">
-
-        <div class="about-content ml-4">
+        <div class="about-content">
             <h3 class="pt-5 pb-4 about-header text-center">About Me</h3>
-            <div id="about-desc" class="">
-                <p class="about-text pb-5 pt-3 mx-2">
-                    I am a <span class="whoami"><u>Software engineer </u></span>   and a <span class="whoami"><u>full stack developer</u></span>. <br>
-                    I love figuring out the building blocks of things
-                    and <br> rearranging them to make something even better.<br><br>
-                    I am very interested in the intersection of code, science <br> and agriculture.<br>
-                    When not writing code, I enjoy writing down my ideas, meditating and <br> driving.
-                </p>
-            </div>
-        </div>
-        <div id="line-divider"></div>
-        <!-- <div class="skills mr-4"> -->
-        <div class="skill-details">
-            <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
-            <div class="container">
-                <div>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                                <figure>
-                                    <i class="devicon-html5-plain colored"></i>
-                                    <figcaption class="text-center">HTML5</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                
-                                <figure>
-                                    <i class="devicon-css3-plain colored"></i>
-                                    <figcaption class="text-center">CSS3</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                
-                                <figure>
-                                    <i class="devicon-typescript-plain colored"></i>
-                                    <figcaption class="text-center">Typescript</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                
-                                <figure>
-                                    <i class="devicon-javascript-plain colored"></i>
-                                    <figcaption class="text-center">Javascript</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                
-                
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-react-plain colored"></i>
-                                    <figcaption class="text-center">React</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-python-plain colored"></i>
-                                    <figcaption class="text-center">Python</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-react-native-plain colored"></i>
-                                    <figcaption class="text-center">React-Native</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-node.js-plain colored"></i>
-                                    <figcaption class="text-center">Node.js</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div>
+            <p class="about-text">I am a Software Engineer and a full-stack developer. I enjoy building systems that push the boundaries of technology and space. When not coding, I’m exploring new ways to connect science, technology, and agriculture.</p>
         </div>
     </section>
-           
-         
-           
-           <div class="col-lg-4  mt-lg-0 mt-5 text-center">
-			
-    </div>
-	<!-- works -->
-	<section class="news text-center" id="work">
-		<div class="container">
-			 <h3 class="heading text-capitalize"> My works </h3>
-		   <p class="subs mt-4">Below are some projects I committed to working on.</p>
-			<div class="row news-grids mt-5">
-						<div class="col-lg-4 col-md-6 newsgrid1">
-							<div class="newsgrid_tp new_grd">
-								<img src="assets/images/pitch.png" alt="news image" class="img-fluid">
-									<div class="news_bt">
-										<h4>SunCity</h4>
-										<p class="mt-4"> A fully automated city with wireless electric transmission. </p>
-									</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6  newsgrid2">
-							<div class="newsgrid_tp new_grd1">
-								<img src="assets/images/galler.png" alt="news image" class="img-fluid">
-								<div class="news_bt">
-									<h4>Steve-Labs</h4>
-									<p class="mt-4"> Steve-labs will revolutionize the healthcare community by changing the way patients are undertaken. </p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6  newsgrid5">
-							<div class="newsgrid_tp new_grd1">
-								<img src="assets/images/delani.png"class="img-fluid">
-								<div class="news_bt">
-									<h4>KingsNet</h4>
-									<p class="mt-4"> KingsNet is a virtual school aimed at terraforming those with little knowledge about the newest trends in tech!
 
-</p>
-								</div>
-							</div>
-						</div>
-				
-						<div class="col-lg-4 col-md-6 mt-md-5 mt-5 newsgrid1">
-							<div class="newsgrid_tp new_grd">
-								<img src="assets/images/awwards.png" alt="news image" class="img-fluid">
-									<div class="news_bt">
-										<h4>Star-X </h4>
-										<p class="mt-4">  This aimed at educating those with interest on rocketry and how rockets launch. </p>
-									</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 mt-md-5 mt-5 newsgrid2">
-							<div class="newsgrid_tp new_grd1">
-								<img src="assets/images/pizzaa.png" alt="news image" class="img-fluid">
-									<div class="news_bt">
-										<h4>Hydra-Farm</h4>
-										<p class="mt-4"> Hydra-Farm is aimed at encouraging those engaged in farming to stay keen on their farming practices</p>
-									</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6 mt-md-5 mt-5 newsgrid2">
-							<div class="newsgrid_tp new_grd1">
-								<img src="assets/images/quotes.png" alt="news image" class="img-fluid">
-									<div class="news_bt">
-										<h4>Nectar-Insurance</h4>
-										<p class="mt-4"> Nectar-Insurance is your next best cover giving back clients a portion of their cover at end year for having no accidents </p>
-									</div>
-							</div>
-						</div>
-					</div>
-			</div>
-            </div>
-		</section>
-        <!-- //works -->
+    <!-- Skills Section -->
+    <section class="skills">
+        <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
+        <div class="container text-center">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <i class="devicon-python-plain colored devicon"></i>
+                    <figcaption>Python</figcaption>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicon-html5-plain colored devicon"></i>
+                    <figcaption>HTML5</figcaption>
+                </li>
+                <li class="list-inline-item">
+                    <i class="devicon-css3-plain colored devicon"></i>
+                    <figcaption>CSS3</figcaption>
+                </li>
+                <!-- Add more skills here -->
+            </ul>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
     <section class="wedo" id="contact">
-        <div class="contact-details">
-            <h3 class="contacts-header text-center pt-5 pb-2 mt-5 mb-1">Contact Me</h3>
-            <div class="contacts">
-
-		<div class="container">
-		   <p class="subs mt-4 text-center">Any thoughts or comments or want to view some of my work?Please contact me below.</p>
-			<div class="contact_grid_right mt-5 mx-auto text-center">
-				<form action="http://eepurl.com/hjBUyn" method="post">
-					<div class="row contact_top">
-						<div class="col-sm-6">
-							<input type="text" name="Name" placeholder="First Name" required="">
-						</div>
-						<div class="col-sm-6">
-							<input type="email" name="Email" placeholder="Email" required="">
-						</div>
-					</div>	
-						<input type="text" name="Name" placeholder="Second Name" required="">
-						<textarea name="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
-						<input type="submit" value="Send Message">
-						<input type="reset" value="Clear Form">
-						<div class="clearfix"> </div>
-				</form>
-			</div>
-
-
-
-                <!-- Footer -->
-                <footer class="page-footer font-small  pt-4">
-
-                    <!-- Footer Elements -->
-                    <div class="container">
-
-                        <!-- Social buttons -->
-                        <ul class="list-unstyled list-inline text-center">
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-tw mx-1" href="https://twitter.com/StephenWa"
-                                    target="_blank">
-                                    <i class="fab fa-twitter" style="color: #1da1f2;"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-gmail mx-1" href="mailto:Stephenwa286@gmail.com" target="_blank">
-                                    <i class="fa fa-envelope" style="color: red;"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/in/Stephen-Wa/"
-                                    target="_blank">
-                                    <i class="fab fa-linkedin-in" style="color: #0077b5;"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Stephen-Wa"
-                                    target="_blank">
-                                    <i class="fab fa-github" style="color: black;"> </i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- Social buttons -->
-
-                    </div>
-                    <!-- Footer Elements -->
-
-                    <!-- Copyright -->
-                    <div class="footer-copyright text-center py-3 mt-4">© 2020 Copyright:
-                        <a style="color: green;"> Stephen-Wa</a>
-                    </div>
-                    <!-- Copyright -->
-
-                </footer>
-                <!-- Footer -->
+        <h3 class="contacts-header text-center pt-5 pb-2 mt-5 mb-1">Contact Me</h3>
+        <div class="contacts">
+            <div class="contact-grid-right text-center">
+                <form action="http://eepurl.com/hjBUyn" method="post">
+                    <input type="text" name="Name" placeholder="First Name" required>
+                    <input type="email" name="Email" placeholder="Email" required>
+                    <textarea name="Message" placeholder="Message..." required></textarea>
+                    <input type="submit" value="Send Message" class="btn-neon">
+                    <input type="reset" value="Clear Form" class="btn-neon">
+                </form>
             </div>
         </div>
-        </div>
     </section>
-    <!-- End Contacts -->
 
+    <!-- Footer -->
+    <footer class="page-footer font-small pt-4">
+        <div class="container text-center">
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1" href="https://twitter.com/StephenWa" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <!-- Add more social links here -->
+            </ul>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2025 Stephen-Wa</div>
+    </footer>
 
-    <!--******* Scripts Section *******-->
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-    <script src="js/particles.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
 </body>
-
 </html>
