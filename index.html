@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="portfolio">
-    <title>Stephen-Wa</title>
+    <meta name="keywords" content="portfolio, developer, projects, creative">
+    <title>Stephen-Wa's Portfolio</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
@@ -14,58 +15,164 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
     <!--Dev icons -->
-    <link rel="stylesheet"
-        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
     <link href="assets/font/stylesheet.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <style>
-   #id {
-       text-align: center;
-   }
-   .back {
-       background-color: rgba(12, 26, 46, 0.8);
-   }
-   .text-white {
-       color: white;
-   }
-   .text-center {
-       text-align: center;
-   }
-   .home-text-large {
-       font-size: 48px;
-   }
-   .home-text {
-       font-size: 36px;
-   }
-   .bounce {
-       animation: bounce 2s infinite;
-   }
-   .arrow a {
-       display: inline-block;
-   }
+    body {
+        background-color: #0c1a2e;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #hello {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .home-text-large {
+        font-size: 48px;
+    }
+
+    .home-text {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    .bounce {
+        animation: bounce 2s infinite;
+    }
+
+    .arrow a {
+        display: inline-block;
+    }
+
+    /* Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px 0;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+
+    /* About Section */
+    #about {
+        padding: 80px 0;
+        background-color: rgba(12, 26, 46, 0.8);
+        text-align: center;
+    }
+
+    /* Skills Section */
+    .skills-header {
+        margin-top: 40px;
+        font-size: 30px;
+        text-transform: uppercase;
+    }
+
+    .skill-details {
+        margin-top: 60px;
+    }
+
+    .skillset {
+        margin-top: 30px;
+    }
+
+    .skillset .list-inline-item {
+        font-size: 30px;
+        margin: 0 15px;
+    }
+
+    /* Project Section */
+    #work {
+        background-color: #1b2631;
+        padding: 80px 0;
+        color: white;
+    }
+
+    .newsgrid_tp {
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .newsgrid_tp img {
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .newsgrid_tp:hover img {
+        transform: scale(1.05);
+    }
+
+    .news_bt h4 {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+
+    .news_bt p {
+        font-size: 14px;
+    }
+
+    /* Contact Section */
+    .contact-details {
+        padding: 80px 0;
+        background-color: #0c1a2e;
+        color: white;
+    }
+
+    .submit_btn input[type="submit"] {
+        background-color: #f96d15;
+        border: none;
+        color: white;
+        font-size: 16px;
+        padding: 10px 30px;
+        cursor: pointer;
+    }
+
+    .submit_btn input[type="submit"]:hover {
+        background-color: #ff7f32;
+    }
 </style>
 
 <body>
+
     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Stephen-Wa</a>
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link" href="#about">About</a>
+            <a class="nav-item nav-link" href="#skills">Skills</a>
+            <a class="nav-item nav-link" href="#work">Projects</a>
+            <a class="nav-item nav-link" href="#contact">Contact</a>
+        </div>
+    </nav>
 
     <!-- Landing Page -->
     <div class="background">
-        <div id="particles">
-            <div class="overlay">
-                <div class="content">
-                    <div class="home-content">
-                        <h1 class="text-center text-white home-text-large" id="hello">H<span id="e">e</span>ll<span id="e" color="#f96d15;">o</span>,</h1>
-                        <h2 class="text-center text-white home-text" id="iam">I'm <span id="o">Stephen-Wa</span>, and I'm a</h2>
-                        <h2 class="text-center text-white home-text">
-                            <span class="angle-b">&lt; </span>
-                            <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Pythonista", "Developer.", "Learner." ]'></span>
-                            <span class="angle-b"> &gt;</span>
-                        </h2>
-                        <div class="arrow bounce">
-                            <a class="fa fa-angle-double-down fa-3x" href="#b"></a>
-                        </div>
+        <div class="overlay">
+            <div class="content">
+                <div class="home-content">
+                    <h1 id="hello">Hello,</h1>
+                    <h2 id="iam">I'm Stephen-Wa, a</h2>
+                    <h2 class="home-text">
+                        <span class="angle-b">&lt; </span>
+                        <span id="dev" class="txt-rotate" data-period="2000" data-rotate='[ "Developer", "Innovator", "Learner" ]'></span>
+                        <span class="angle-b"> &gt;</span>
+                    </h2>
+                    <div class="arrow bounce">
+                        <a class="fa fa-angle-double-down fa-3x" href="#about"></a>
                     </div>
                 </div>
             </div>
@@ -73,189 +180,128 @@
     </div>
     <!-- End Landing Page -->
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about">
-        <div class="about-content ml-4">
-            <h3 class="pt-5 pb-4 about-header text-center">About Me</h3>
-            <div id="about-desc" class="">
-                <p class="about-text pb-5 pt-3 mx-2">
-                    I am a <span class="whoami"><u>Software Engineer</u></span> and a <span class="whoami"><u>Full Stack Developer</u></span>.
-                    I love figuring out the building blocks of things and rearranging them to make something even better.<br><br>
-                    I'm interested in the intersection of code, science, and agriculture.<br>
-                    When not writing code, I enjoy writing down my ideas, meditating, and driving.
-                </p>
-            </div>
+        <div class="about-content">
+            <h3 class="about-header">About Me</h3>
+            <p>
+                I am a passionate software engineer and a creative developer with a focus on full-stack development, AI, and automation. I strive to build elegant and efficient solutions that drive innovation and make an impact.
+                <br>
+                When I’m not coding, I enjoy exploring the intersection of technology, design, and sustainability.
+            </p>
         </div>
-        <div id="line-divider"></div>
+    </section>
 
+    <!-- Skills Section -->
+    <section id="skills">
         <div class="skill-details">
-            <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
+            <h3 class="skills-header">Skills</h3>
             <div class="container">
-                <div>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="https://www.w3schools.com/html/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-html5-plain colored"></i>
-                                    <figcaption class="text-center">HTML5</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.w3schools.com/css/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-css3-plain colored"></i>
-                                    <figcaption class="text-center">CSS3</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.typescriptlang.org/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-typescript-plain colored"></i>
-                                    <figcaption class="text-center">Typescript</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-javascript-plain colored"></i>
-                                    <figcaption class="text-center">Javascript</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a href="https://reactjs.org/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-react-plain colored"></i>
-                                    <figcaption class="text-center">React</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://www.python.org/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-python-plain colored"></i>
-                                    <figcaption class="text-center">Python</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://reactnative.dev/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-react-native-plain colored"></i>
-                                    <figcaption class="text-center">React-Native</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://nodejs.org/" target="_blank" class="mx-2">
-                                <figure>
-                                    <i class="devicon-nodejs-plain colored"></i>
-                                    <figcaption class="text-center">Node.js</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="list-unstyled list-inline text-center">
+                    <li class="list-inline-item">
+                        <a href="https://www.w3schools.com/html/" target="_blank">
+                            <i class="devicon-html5-plain colored"></i>
+                            <h4>HTML5</h4>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.w3schools.com/css/" target="_blank">
+                            <i class="devicon-css3-plain colored"></i>
+                            <h4>CSS3</h4>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.typescriptlang.org/" target="_blank">
+                            <i class="devicon-typescript-plain colored"></i>
+                            <h4>Typescript</h4>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.javascript.com/" target="_blank">
+                            <i class="devicon-javascript-plain colored"></i>
+                            <h4>Javascript</h4>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
-    <!-- End About -->
 
-    <!-- Projects -->
-    <section class="news text-center" id="work">
+    <!-- Projects Section -->
+    <section id="work">
         <div class="container">
-            <h3 class="heading text-capitalize"> My works </h3>
-            <p class="subs mt-4">Below are some projects I committed to working on.</p>
-            <div class="row news-grids mt-5">
-                <div class="col-lg-4 col-md-6 newsgrid1">
-                    <div class="newsgrid_tp new_grd">
-                        <img src="assets/images/ai_tech.png" alt="news image" class="img-fluid">
+            <h3 class="heading">My Works</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="newsgrid_tp">
+                        <img src="assets/images/ai_tech.png" alt="AI-Powered Chatbot">
                         <div class="news_bt">
                             <h4>AI-Powered Chatbot</h4>
-                            <p class="mt-4">A conversational AI chatbot that provides 24/7 customer support for websites. Powered by advanced machine learning algorithms, it helps businesses automate customer interactions.</p>
+                            <p>This intelligent chatbot provides customer support with real-time problem-solving, improving user experience.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 newsgrid2">
-                    <div class="newsgrid_tp new_grd1">
-                        <img src="assets/images/smart_agriculture.png" alt="news image" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="newsgrid_tp">
+                        <img src="assets/images/smart_agriculture.png" alt="Smart Agriculture System">
                         <div class="news_bt">
                             <h4>Smart Agriculture System</h4>
-                            <p class="mt-4">A system that integrates IoT sensors and cloud computing to optimize water usage, monitor crop health, and increase the efficiency of farming operations through data analytics.</p>
+                            <p>A technology-driven solution for optimizing farming processes using IoT sensors to monitor crop health and soil moisture.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 newsgrid5">
-                    <div class="newsgrid_tp new_grd1">
-                        <img src="assets/images/eco_energy.png" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="newsgrid_tp">
+                        <img src="assets/images/eco_energy.png" alt="Eco-Friendly Energy Grid">
                         <div class="news_bt">
                             <h4>Eco-Friendly Energy Grid</h4>
-                            <p class="mt-4">A sustainable energy solution using solar panels and battery storage to provide clean, off-grid electricity for remote areas, helping reduce carbon footprints.</p>
+                            <p>Renewable energy solutions that reduce carbon footprints and make sustainable energy more accessible to remote areas.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 newsgrid4">
-                    <div class="newsgrid_tp new_grd2">
-                        <img src="assets/images/fintech.png" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="newsgrid_tp">
+                        <img src="assets/images/fintech.png" alt="FinTech Platform">
                         <div class="news_bt">
                             <h4>FinTech Platform</h4>
-                            <p class="mt-4">A comprehensive platform that integrates various financial services like lending, investing, and trading. Users can manage their finances in one seamless interface.</p>
+                            <p>An all-in-one platform for managing investments, trading, and personal finance with an emphasis on security and usability.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 newsgrid3">
-                    <div class="newsgrid_tp new_grd3">
-                        <img src="assets/images/healthtech.png" class="img-fluid">
+                <div class="col-md-4">
+                    <div class="newsgrid_tp">
+                        <img src="assets/images/healthtech.png" alt="HealthTech App">
                         <div class="news_bt">
-                            <h4>HealthTech Application</h4>
-                            <p class="mt-4">A mobile app for personalized health and wellness advice, leveraging AI to suggest fitness routines, dietary plans, and mental health tips based on user data.</p>
+                            <h4>HealthTech App</h4>
+                            <p>A wellness-focused mobile application designed to personalize fitness routines and provide actionable health insights based on user data.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Projects -->
 
-    <!-- Contact -->
-    <section class="wedo" id="contact">
+    <!-- Contact Section -->
+    <section id="contact">
         <div class="contact-details">
-            <h3 class="contacts-header text-center pt-5 pb-2 mt-5 mb-1">Contact Me</h3>
-            <div class="contacts">
-                <div class="container">
-                    <p class="subs mt-4 text-center">Any thoughts or comments or want to view some of my work? Please contact me below.</p>
-                    <div class="contact_grid_right mt-5 mx-auto text-center">
-                        <form action="http://eepurl.com/hjBUyn" method="post">
-                            <div class="row contact_top">
-                                <div class="col-sm-6">
-                                    <input type="text" name="Name" placeholder="First Name" required="">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="email" name="Email" placeholder="Email" required="">
-                                </div>
-                            </div>    
-                            <div class="row contact_bottom">
-                                <div class="col-sm-12">
-                                    <textarea name="Message" placeholder="Your Message" required=""></textarea>
-                                </div>
-                            </div>
-                            <div class="submit_btn mt-5">
-                                <input type="submit" value="Send">
-                            </div>
-                        </form>
+            <h3 class="contacts-header text-center">Contact Me</h3>
+            <form action="http://eepurl.com/hjBUyn" method="post">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" name="Name" placeholder="First Name" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="email" name="Email" placeholder="Email" required>
                     </div>
                 </div>
-            </div>
+                <textarea name="Message" placeholder="Your Message" required></textarea>
+                <div class="submit_btn">
+                    <input type="submit" value="Send Message">
+                </div>
+            </form>
         </div>
     </section>
-    <!-- End Contact -->
 
 </body>
+
 </html>
