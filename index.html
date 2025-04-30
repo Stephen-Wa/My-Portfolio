@@ -4,98 +4,145 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="portfolio, software engineer, full stack developer, Python, React, AI, agriculture, fintech, Stephen-Wa">
-    <meta name="description" content="Portfolio of Stephen-Wa, a Software Engineer and Full Stack Developer specializing in AI, agriculture, and fintech solutions.">
-    <title>Stephen-Wa | Software Engineer Portfolio</title>
+    <meta name="description" content="Futuristic portfolio of Stephen-Wa, a Software Engineer and Full Stack Developer specializing in AI, agriculture, and fintech solutions.">
+    <title>Stephen-Wa | Futuristic Portfolio</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@300;400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-znmTf4HNoF9U6mfB6KZZ+xmB5v4uD5AAuJZ1Wbmk9F2yDMNgkQNAdDYGpPGP2G7Id1gCjM9Tdy0f4xxT4nq3wAg==" crossorigin="anonymous">
     <!-- Devicons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <!-- GSAP for animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link href="css/main.css" rel="stylesheet" type="text/css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+            background: #1a1a1a;
+            color: #ffffff;
             margin: 0;
             overflow-x: hidden;
+            position: relative;
+        }
+        /* Space Background */
+        .space-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #2a0040 0%, #1a1a1a 70%);
+            overflow: hidden;
+        }
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff007a, #a100ff);
+            box-shadow: 0 0 20px rgba(255, 0, 122, 0.5);
+            animation: float 20s infinite linear;
+        }
+        .planet:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 20%;
+        }
+        .planet:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            left: 80%;
+            animation-duration: 15s;
+        }
+        .spaceship {
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            background: url('assets/images/spaceship.png') no-repeat center/cover;
+            animation: cruise 30s infinite linear;
+            top: 30%;
+            left: -50px;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+        @keyframes cruise {
+            0% { transform: translateX(-50px); }
+            100% { transform: translateX(100vw); }
         }
         /* Navbar */
         .navbar {
-            background: rgba(12, 26, 46, 0.95);
+            background: rgba(26, 26, 26, 0.9);
             position: sticky;
             top: 0;
             z-index: 1000;
             padding: 10px 0;
         }
         .navbar a {
-            color: white;
-            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
             font-weight: 500;
             font-size: 16px;
             transition: color 0.3s;
         }
         .navbar a:hover {
-            color: #f96d15;
+            color: #ff007a;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         /* Landing Page */
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: -1;
-        }
-        .back {
-            background: linear-gradient(135deg, rgba(12, 26, 46, 0.9), rgba(20, 40, 70, 0.8));
+        .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            padding: 20px;
         }
         .home-text-large {
-            font-family: 'Poppins', sans-serif;
-            font-size: 56px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 60px;
             font-weight: 700;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff007a;
         }
         .home-text {
             font-family: 'Roboto', sans-serif;
-            font-size: 32px;
-            color: white;
+            font-size: 28px;
+            color: #ffffff;
             font-weight: 300;
+            margin: 10px 0;
         }
         .btn-resume {
-            background: #f96d15;
-            color: white;
+            background: #ff007a;
+            color: #ffffff;
             padding: 12px 24px;
             border-radius: 25px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-weight: 500;
             text-decoration: none;
-            transition: background 0.3s;
+            transition: background 0.3s, box-shadow 0.3s;
             margin-top: 20px;
             display: inline-block;
         }
         .btn-resume:hover {
-            background: #d85c12;
+            background: #a100ff;
+            box-shadow: 0 0 15px #a100ff;
         }
         .arrow a {
-            color: white;
+            color: #ffffff;
             font-size: 2.5rem;
             transition: color 0.3s;
         }
         .arrow a:hover {
-            color: #f96d15;
+            color: #ff007a;
         }
         .bounce {
             animation: bounce 2s infinite;
@@ -110,58 +157,63 @@
             padding: 80px 0;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
-        .about-content, .skill-details, .contact-details {
-            background: white;
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
         }
         .about-header, .skills-header, .contacts-header, .heading {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 36px;
-            color: #0c1a2e;
+            color: #ff007a;
             font-weight: 700;
             margin-bottom: 20px;
+            text-shadow: 0 0 5px #ff007a;
         }
         .whoami {
-            color: #f96d15;
+            color: #a100ff;
             font-weight: 500;
         }
         /* Skills */
         .skill-details ul li {
-            perspective: 1000px;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .skill-details ul li:hover {
-            transform: translateZ(30px);
+            transform: scale(1.2);
+            box-shadow: 0 0 15px #ff007a;
         }
         .skill-details figure {
             margin: 0 15px;
         }
         .skill-details figcaption {
             font-size: 14px;
-            color: #555;
+            color: #ffffff;
             margin-top: 5px;
         }
         /* Projects */
         .project-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 30px;
             display: flex;
             align-items: stretch;
         }
         .project-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 0 20px #a100ff;
         }
-        .project-canvas {
+        .project-image {
             width: 50%;
+            object-fit: cover;
             height: 300px;
-            background: #e9ecef;
         }
         .project-desc {
             width: 50%;
@@ -171,50 +223,53 @@
             justify-content: center;
         }
         .project-desc h4 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 24px;
-            color: #0c1a2e;
+            color: #ff007a;
             margin-bottom: 10px;
         }
         .project-desc p {
             font-size: 16px;
-            color: #555;
+            color: #ffffff;
             margin-bottom: 10px;
         }
         .project-desc a {
-            color: #f96d15;
+            color: #a100ff;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
         .project-desc a:hover {
-            color: #d85c12;
+            color: #ff007a;
         }
         /* Contact */
         .contact_top input, .contact_bottom textarea {
             width: 100%;
             padding: 12px;
             margin: 10px 0;
-            border: 1px solid #ddd;
+            border: 1px solid #a100ff;
             border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
             font-family: 'Roboto', sans-serif;
         }
         .contact_bottom textarea {
             min-height: 120px;
         }
         .submit_btn input {
-            background: #f96d15;
-            color: white;
+            background: #ff007a;
+            color: #ffffff;
             padding: 12px 24px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-weight: 500;
-            transition: background 0.3s;
+            transition: background 0.3s, box-shadow 0.3s;
         }
         .submit_btn input:hover {
-            background: #d85c12;
+            background: #a100ff;
+            box-shadow: 0 0 15px #a100ff;
         }
         /* Animations */
         .fade-in {
@@ -231,10 +286,10 @@
             .project-card {
                 flex-direction: column;
             }
-            .project-canvas, .project-desc {
+            .project-image, .project-desc {
                 width: 100%;
             }
-            .project-canvas {
+            .project-image {
                 height: 250px;
             }
         }
@@ -255,6 +310,13 @@
     </style>
 </head>
 <body>
+    <!-- Space Background -->
+    <div class="space-bg">
+        <div class="planet"></div>
+        <div class="planet"></div>
+        <div class="spaceship"></div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
@@ -273,42 +335,35 @@
         </div>
     </nav>
 
-    <!-- 3D Background -->
-    <div id="particles"></div>
-
     <!-- Landing Page -->
-    <section id="home" class="background">
-        <div class="overlay back">
-            <div class="content container text-center">
-                <div class="home-content">
-                    <h1 class="home-text-large fade-in">H<span>e</span>ll<span style="color: #f96d15;">o</span>,</h1>
-                    <h2 class="home-text fade-in" style="animation-delay: 0.2s;">I'm <span>Stephen-Wa</span>, and I'm a</h2>
-                    <h2 class="home-text fade-in" style="animation-delay: 0.4s;">
-                        <span class="angle-b">&lt;</span>
-                        <span class="txt-rotate" data-period="2000" data-rotate='["Pythonista", "Developer", "Innovator"]'>></span>
-                        <span class="angle-b">&gt;</span>
-                    </h2>
-                    <a href="assets/resume/Stephen_Wa_Resume.pdf" class="btn-resume fade-in" style="animation-delay: 0.6s;" download>Download Resume</a>
-                    <div class="arrow bounce fade-in" style="animation-delay: 0.8s;">
-                        <a class="fa fa-angle-double-down" href="#about" aria-label="Scroll to About section"></a>
-                    </div>
-                </div>
+    <section id="home" class="hero">
+        <div class="container text-center">
+            <h1 class="home-text-large fade-in">H<span>e</span>ll<span style="color: #ff007a;">o</span>,</h1>
+            <h2 class="home-text fade-in" style="animation-delay: 0.2s;">I'm <span>Stephen-Wa</span>, and I'm a</h2>
+            <h2 class="home-text fade-in" style="animation-delay: 0.4s;">
+                <span class="angle-b"><</span>
+                <span class="txt-rotate" data-period="2000" data-rotate='["Pythonista", "Developer", "Innovator"]'>></span>
+                <span class="angle-b">></span>
+            </h2>
+            <a href="assets/resume/Stephen_Wa_Resume.pdf" class="btn-resume fade-in" style="animation-delay: 0.6s;" download>Download Resume</a>
+            <div class="arrow bounce fade-in" style="animation-delay: 0.8s;">
+                <a class="fa fa-angle-double-down" href="#about" aria-label="Scroll to About section"></a>
             </div>
         </div>
     </section>
 
     <!-- About -->
     <section id="about">
-        <div class="about-content fade-in">
+        <div class="content-card fade-in">
             <h3 class="about-header text-center">About Me</h3>
             <div class="text-center">
                 <p class="about-text">
-                    I’m a <span class="whoami">Software Engineer</span> and <span class="whoami">Full Stack Developer</span> passionate about building innovative solutions at the intersection of code, science, and agriculture. With expertise in Python, React, and IoT, I transform complex problems into efficient, scalable systems. My work has driven measurable impact, from optimizing farm efficiency to automating customer support.<br><br>
-                    When I’m not coding, I’m brainstorming ideas, meditating, or exploring new roads. Let’s build something impactful together!
+                    I’m a <span class="whoami">Software Engineer</span> and <span class="whoami">Full Stack Developer</span> driven to create cutting-edge solutions in AI, agriculture, and fintech. With mastery in Python, React, and IoT, I build systems that solve real-world problems with measurable impact. My projects have optimized farm yields, streamlined customer support, and empowered financial services.<br><br>
+                    Off the keyboard, I’m ideating, meditating, or cruising new horizons. Ready to launch your next big project? Let’s make it happen!
                 </p>
             </div>
         </div>
-        <div class="skill-details fade-in">
+        <div class="content-card skill-details fade-in">
             <h3 class="skills-header text-center">Skills</h3>
             <div class="container">
                 <ul class="list-unstyled list-inline text-center">
@@ -385,64 +440,64 @@
     <section id="work" class="news text-center">
         <div class="container">
             <h3 class="heading">My Projects</h3>
-            <p class="subs mt-4">Here are some of my key projects, demonstrating measurable impact and technical expertise.</p>
+            <p class="subs mt-4">Explore my work, where innovation meets impact in AI, agriculture, and fintech.</p>
             <div class="row mt-5">
                 <div class="col-lg-6 col-md-12 fade-in">
                     <div class="project-card">
-                        <div class="project-canvas" id="canvas-ai"></div>
+                        <img src="assets/images/ai_tech.png" alt="AI Chatbot Interface" class="project-image" loading="lazy">
                         <div class="project-desc">
                             <h4>AI-Powered Chatbot</h4>
-                            <p>Developed a conversational AI chatbot for 24/7 customer support, reducing response times by 40%. Used NLP to handle complex queries.</p>
+                            <p>Engineered a 24/7 customer support chatbot, slashing response times by 40% with advanced NLP.</p>
                             <p><strong>Tools:</strong> Python, TensorFlow, React</p>
-                            <p><strong>Process:</strong> Trained models on customer data, optimized for web deployment, and integrated with React frontend.</p>
+                            <p><strong>Process:</strong> Trained models on diverse datasets, optimized for web, and built a sleek React frontend.</p>
                             <p><a href="https://github.com/stephen-wa/ai-chatbot" target="_blank">View Code</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 fade-in">
                     <div class="project-card">
-                        <div class="project-canvas" id="canvas-agri"></div>
+                        <img src="assets/images/smart_agriculture.png" alt="Smart Agriculture System" class="project-image" loading="lazy">
                         <div class="project-desc">
                             <h4>Smart Agriculture System</h4>
-                            <p>Built an IoT system to optimize water usage and monitor crop health, improving farm efficiency by 25%.</p>
+                            <p>Developed an IoT system to optimize water use and crop health, boosting farm efficiency by 25%.</p>
                             <p><strong>Tools:</strong> Node.js, AWS, Raspberry Pi</p>
-                            <p><strong>Process:</strong> Designed sensor network, deployed cloud analytics, and ensured real-time data delivery.</p>
+                            <p><strong>Process:</strong> Designed sensor arrays, integrated cloud analytics, and ensured real-time monitoring.</p>
                             <p><a href="https://github.com/stephen-wa/smart-agriculture" target="_blank">View Code</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 fade-in">
                     <div class="project-card">
-                        <div class="project-canvas" id="canvas-energy"></div>
+                        <img src="assets/images/eco_energy.png" alt="Eco-Friendly Energy Grid" class="project-image" loading="lazy">
                         <div class="project-desc">
                             <h4>Eco-Friendly Energy Grid</h4>
-                            <p>Created a solar-powered energy solution for remote areas, cutting carbon emissions by 30%.</p>
+                            <p>Built a solar-powered grid for remote areas, cutting carbon emissions by 30%.</p>
                             <p><strong>Tools:</strong> Python, Arduino, React Native</p>
-                            <p><strong>Process:</strong> Programmed microcontrollers, developed mobile app, and tested in real-world conditions.</p>
+                            <p><strong>Process:</strong> Programmed controllers, developed a mobile app, and validated in field tests.</p>
                             <p><a href="https://github.com/stephen-wa/eco-energy" target="_blank">View Code</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 fade-in">
                     <div class="project-card">
-                        <div class="project-canvas" id="canvas-fintech"></div>
+                        <img src="assets/images/fintech.png" alt="FinTech Platform" class="project-image" loading="lazy">
                         <div class="project-desc">
                             <h4>FinTech Platform</h4>
-                            <p>Designed a platform for lending, investing, and trading, boosting user retention by 15%.</p>
+                            <p>Created a platform for lending, investing, and trading, increasing user retention by 15%.</p>
                             <p><strong>Tools:</strong> React, Node.js, MongoDB</p>
-                            <p><strong>Process:</strong> Built secure APIs, optimized database queries, and ensured UX consistency.</p>
+                            <p><strong>Process:</strong> Built secure APIs, optimized queries, and designed an intuitive UI.</p>
                             <p><a href="https://github.com/stephen-wa/fintech-platform" target="_blank">View Code</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 fade-in">
                     <div class="project-card">
-                        <div class="project-canvas" id="canvas-health"></div>
+                        <img src="assets/images/healthtech.png" alt="HealthTech Application" class="project-image" loading="lazy">
                         <div class="project-desc">
                             <h4>HealthTech Application</h4>
-                            <p>Developed an AI-driven mobile app for personalized health advice, increasing engagement by 20%.</p>
+                            <p>Designed an AI-driven app for personalized health advice, boosting engagement by 20%.</p>
                             <p><strong>Tools:</strong> React Native, Python, Firebase</p>
-                            <p><strong>Process:</strong> Integrated AI models, designed intuitive UI, and ensured data privacy.</p>
+                            <p><strong>Process:</strong> Integrated AI models, crafted a user-friendly UI, and ensured data security.</p>
                             <p><a href="https://github.com/stephen-wa/healthtech-app" target="_blank">View Code</a></p>
                         </div>
                     </div>
@@ -453,11 +508,11 @@
 
     <!-- Contact -->
     <section id="contact" class="wedo">
-        <div class="contact-details fade-in">
+        <div class="content-card fade-in">
             <h3 class="contacts-header text-center">Contact Me</h3>
             <div class="contacts">
                 <div class="container">
-                    <p class="subs mt-4 text-center">Interested in collaborating or discussing opportunities? Reach out below.</p>
+                    <p class="subs mt-4 text-center">Ready to explore opportunities or collaborate? Let’s connect!</p>
                     <div class="contact_grid_right mt-5 mx-auto text-center">
                         <form action="http://eepurl.com/hjBUyn" method="post">
                             <div class="row contact_top">
@@ -484,8 +539,8 @@
     </section>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha512-6weN8rMCL1QBRYJrfX+YuK36R3IofV+OhXGlMvdGwcG3M5KQrGomTYaTYYyT3I2Ck6p7a7YhqTFRmT71f3oEeyw==" crossorigin="anonymous"></script>
     <script>
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -498,18 +553,16 @@
         });
 
         // Scroll Animations
-        gsap.utils.toArray('.fade-in').forEach(element => {
-            gsap.from(element, {
-                opacity: 0,
-                y: 20,
-                duration: 0.6,
-                scrollTrigger: {
-                    trigger: element,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
+        function animateOnScroll() {
+            document.querySelectorAll('.fade-in').forEach(element => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.8) {
+                    element.classList.add('visible');
                 }
             });
-        });
+        }
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
 
         // Text Rotation
         class TxtRotate {
@@ -548,74 +601,31 @@
             }
         }
         window.onload = function() {
-            let elements = document.getElementsByClassName('txt-rotate');
-            for (let i = 0; i < elements.length; i++) {
-                let toRotate = elements[i].getAttribute('data-rotate');
-                let period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            try {
+                let elements = document.getElementsByClassName('txt-rotate');
+                for (let i = 0; i < elements.length; i++) {
+                    let toRotate = elements[i].getAttribute('data-rotate');
+                    let period = elements[i].getAttribute('data-period');
+                    if (toRotate) {
+                        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+                    }
                 }
+            } catch (e) {
+                console.warn('Text rotation failed:', e);
+                document.querySelector('.txt-rotate').textContent = 'Developer';
             }
         };
 
-        // 3D Background (Interactive Sphere)
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('particles').appendChild(renderer.domElement);
-
-        const geometry = new THREE.SphereGeometry(100, 32, 16);
-        const material = new THREE.MeshBasicMaterial({ color: 0xf96d15, wireframe: true });
-        const sphere = new THREE.Mesh(geometry, material);
-        scene.add(sphere);
-        camera.position.z = 200;
-
-        let mouseX = 0, mouseY = 0;
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        // Image Fallback
+        document.querySelectorAll('.project-image').forEach(img => {
+            img.onerror = () => {
+                img.src = 'https://via.placeholder.com/300x300?text=Project+Image';
+                img.alt = 'Placeholder project image';
+            };
         });
 
-        function animate() {
-            requestAnimationFrame(animate);
-            sphere.rotation.y += 0.002 + mouseX * 0.01;
-            sphere.rotation.x += 0.002 + mouseY * 0.01;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // 3D Project Viewers
-        function create3DViewer(canvasId, color) {
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById(canvasId), alpha: true });
-            renderer.setSize(300, 300);
-            const geometry = new THREE.BoxGeometry();
-            const material = new THREE.MeshBasicMaterial({ color: color, wireframe: true });
-            const cube = new THREE.Mesh(geometry, material);
-            scene.add(cube);
-            camera.position.z = 2;
-            function animate() {
-                requestAnimationFrame(animate);
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
-                renderer.render(scene, camera);
-            }
-            animate();
-        }
-        create3DViewer('canvas-ai', 0xff0000);
-        create3DViewer('canvas-agri', 0x00ff00);
-        create3DViewer('canvas-energy', 0x0000ff);
-        create3DViewer('canvas-fintech', 0xffff00);
-        create3DViewer('canvas-health', 0xff00ff);
-
-        // Resize Handler
-        window.addEventListener('resize', () => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-        });
+        // Spaceship Fallback
+        document.querySelector('.spaceship').style.background = document.querySelector('.spaceship').style.background || 'linear-gradient(45deg, #ff007a, #a100ff)';
     </script>
 </body>
 </html>
