@@ -2,364 +2,293 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="portfolio, software engineer, full stack developer, AI, auditing, Axentis, Stephen-Wa, Python, React">
-    <meta name="description" content="Stephen-Wa's cosmic portfolio, showcasing AI-driven solutions like Axentis, built by the universe's top programmer.">
-    <title>Stephen-Wa | Galactic Portfolio</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha512-9guS59q0jJ6JzzdB5GUSp86k3+ekcP58KBXaOsnD25Yg+7dI8bAKL1jgnAU3XvLaWQCk+CWrIryaT4yG7yNeJZQ==" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Wa's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #1a1a1a;
-            color: #ffffff;
             margin: 0;
-            overflow-x: hidden;
-            position: relative;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #1C2526;
+            line-height: 1.6;
         }
-        #webgl-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        .navbar {
-            background: rgba(26, 26, 26, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        .nav-link {
-            font-family: 'Orbitron', sans-serif;
+        header {
+            background: linear-gradient(90deg, #1C2526, #3A4A4B);
             color: #ffffff;
-            transition: color 0.3s, transform 0.3s;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .nav-link:hover {
-            color: #ff007a;
-            transform: translateY(-2px);
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
         }
-        .hologram {
-            text-shadow: 0 0 10px #ff007a, 0 0 20px #a100ff;
-            animation: glitch 2s infinite;
+        nav {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
         }
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            2% { transform: translate(-2px, 2px); }
-            4% { transform: translate(2px, -2px); }
-            6% { transform: translate(0); }
+        nav a {
+            margin: 0 25px;
+            text-decoration: none;
+            color: #1C2526;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: color 0.3s;
         }
-        .content-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        nav a:hover, nav a:focus {
+            color: #D4A017;
+            outline: 2px solid #D4A017;
         }
-        .project-card {
-            transition: transform 0.3s, box-shadow 0.3s;
+        nav a.active {
+            background-color: #D4A017;
+            color: #1C2526;
         }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px #a100ff;
-        }
-        .btn-neon {
-            background: #ff007a;
+        .section {
+            background: linear-gradient(45deg, #1C2526, #3A4A4B);
+            background-size: 200% 200%;
+            animation: gradientFade 10s ease infinite;
+            padding: 80px 40px;
+            text-align: center;
             color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-family: 'Orbitron', sans-serif;
-            transition: background 0.3s, box-shadow 0.3s;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            display: none;
         }
-        .btn-neon:hover {
-            background: #a100ff;
-            box-shadow: 0 0 15px #a100ff;
+        .section.active {
+            display: block;
         }
-        .skill-icon {
-            transition: transform 0.3s;
+        @keyframes gradientFade {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .skill-icon:hover {
-            transform: rotateY(180deg);
+        .section h2 {
+            font-size: 2.5em;
+            margin: 0 0 30px;
+        }
+        .section p {
+            font-size: 1.3em;
+            margin: 15px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            background-color: #D4A017;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .section button:hover, .section button:focus {
+            background-color: #B88B14;
+            transform: scale(1.05);
+            outline: 2px solid #ffffff;
         }
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 1s ease-in;
         }
         .fade-in.visible {
             opacity: 1;
-            transform: translateY(0);
         }
-        @media (max-width: 992px) {
-            .project-card {
-                flex-direction: column;
+        .projects .project-card {
+            background-color: #f9f9f9;
+            color: #1C2526;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .projects .project-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .projects img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .certifications ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .certifications li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .contact a {
+            color: #D4A017;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact a:hover, .contact a:focus {
+            color: #B88B14;
+            outline: 2px solid #B88B14;
+        }
+        footer {
+            background-color: #1C2526;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 20px;
             }
-            .project-image, .project-desc {
-                width: 100%;
+            .projects .project-card {
+                max-width: 90%;
             }
-            .project-image {
-                height: 250px;
+            header h1 {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <canvas id="webgl-canvas"></canvas>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.production.min.js" integrity="sha512-7H/vQ6Z7j2qG8gHCa7lXJ++ZfQnWd+IhV7fQ8Y4x5l40a4zv4Iu3z3q1J2l5q3z3q1J2l5q3z3q1J2l5q3z3q1J==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.production.min.js" integrity="sha512-V7B8V7J2l40a4zv4Iu3z3q1J2l5q3z3q1J2l5q3z3q1J2l5q3z3q1J2l5q3z3q1J2l5q3z3q1J2l5q3z3q1J==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLK8N/AMW77V6s1CHIQZCK62/IVK6rWGCZmwQSCN7ZwZqVJ1gnrWsjpW7nE3F9H8W8ZlrnA4B7qtk7M0I0w==" crossorigin="anonymous"></script>
-    <script type="text/babel">
-        const { useState, useEffect } = React;
-
-        const App = () => {
-            const projects = [
-                {
-                    title: "Axentis AI Auditing",
-                    image: "assets/images/axentis.png",
-                    alt: "Axentis AI Auditing System",
-                    logo: "assets/images/axentis_logo.png",
-                    description: "Engineered an AI-driven auditing system for compliance and transparency, reducing errors by 20%.",
-                    tools: "Python, TensorFlow, Node.js",
-                    process: "Developed AI models, integrated secure APIs, crafted a responsive dashboard.",
-                    link: "https://github.com/stephen-wa/axentis-audit"
-                },
-                {
-                    title: "Smart Agriculture System",
-                    image: "assets/images/smart_agriculture.png",
-                    alt: "Smart Agriculture System",
-                    description: "Built an IoT system to optimize water use and crop health, boosting farm efficiency by 25%.",
-                    tools: "Node.js, AWS, Raspberry Pi",
-                    process: "Designed sensor arrays, integrated cloud analytics, ensured real-time monitoring.",
-                    link: "https://github.com/stephen-wa/smart-agriculture"
-                },
-                {
-                    title: "Eco-Friendly Energy Grid",
-                    image: "assets/images/eco_energy.png",
-                    alt: "Eco-Friendly Energy Grid",
-                    description: "Created a solar-powered grid for remote areas, cutting emissions by 30%.",
-                    tools: "Python, Arduino, React Native",
-                    process: "Programmed controllers, developed a mobile app, validated in field tests.",
-                    link: "https://github.com/stephen-wa/eco-energy"
-                },
-                {
-                    title: "HealthTech Application",
-                    image: "assets/images/healthtech.png",
-                    alt: "HealthTech Application",
-                    description: "Designed an AI-driven app for personalized health advice, boosting engagement by 20%.",
-                    tools: "React Native, Python, Firebase",
-                    process: "Integrated AI models, crafted a user-friendly UI, ensured data security.",
-                    link: "https://github.com/stephen-wa/healthtech-app"
-                }
-            ];
-
-            const skills = [
-                { name: "HTML5", icon: "devicon-html5-plain colored", link: "https://www.w3schools.com/html/" },
-                { name: "CSS3", icon: "devicon-css3-plain colored", link: "https://www.w3schools.com/css/" },
-                { name: "TypeScript", icon: "devicon-typescript-plain colored", link: "https://www.typescriptlang.org/" },
-                { name: "JavaScript", icon: "devicon-javascript-plain colored", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-                { name: "React", icon: "devicon-react-original colored", link: "https://reactjs.org/" },
-                { name: "Python", icon: "devicon-python-plain colored", link: "https://www.python.org/" },
-                { name: "React Native", icon: "devicon-react-original colored", link: "https://reactnative.dev/" },
-                { name: "Node.js", icon: "devicon-nodejs-plain colored", link: "https://nodejs.org/" }
-            ];
-
-            const [tagline, setTagline] = useState("Pythonista");
-            const taglines = ["Pythonista", "Developer", "Visionary"];
-            useEffect(() => {
-                const interval = setInterval(() => {
-                    setTagline(prev => {
-                        const currentIndex = taglines.indexOf(prev);
-                        return taglines[(currentIndex + 1) % taglines.length];
-                    });
-                }, 2000);
-                return () => clearInterval(interval);
-            }, []);
-
-            return (
-                <div>
-                    <nav className="navbar flex items-center justify-between px-4">
-                        <a href="#" className="flex items-center">
-                            <img src="assets/images/axentis_logo.png" alt="Axentis Logo" className="h-10 mr-2" onError={e => e.target.src = "https://via.placeholder.com/100x40?text=Axentis"} />
-                        </a>
-                        <div className="flex space-x-4">
-                            <a href="#home" className="nav-link">Home</a>
-                            <a href="#about" className="nav-link">About</a>
-                            <a href="#projects" className="nav-link">Projects</a>
-                            <a href="#live-code" className="nav-link">Live Code</a>
-                            <a href="#contact" className="nav-link">Contact</a>
-                        </div>
-                    </nav>
-
-                    <section id="home" className="min-h-screen flex items-center justify-center text-center px-4">
-                        <div>
-                            <h1 className="text-5xl md:text-7xl font-orbitron hologram fade-in">Stephen-Wa: <span className="text-pink-500">Galactic Innovator</span></h1>
-                            <h2 className="text-2xl md:text-3xl mt-4 fade-in">I’m a <span>{tagline}</span></h2>
-                            <a href="assets/resume/Stephen_Wa_Resume.pdf" className="btn-neon mt-6 inline-block fade-in" download>Download Resume</a>
-                            <div className="mt-8 fade-in">
-                                <a href="#about" className="fas fa-angle-double-down text-4xl animate-bounce" aria-label="Scroll to About"></a>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="about" className="py-20 px-4">
-                        <div className="content-card mx-auto max-w-5xl fade-in">
-                            <h2 className="text-4xl font-orbitron text-pink-500 text-center mb-6">Mission Log</h2>
-                            <p className="text-center text-lg">
-                                I’m Stephen-Wa, a <span className="text-purple-500 font-semibold">Software Engineer</span> and <span className="text-purple-500 font-semibold">Full Stack Developer</span> charting the cosmos of code. My mission: to engineer AI-driven solutions that transform industries. From Axentis’s auditing precision to agricultural IoT, my work delivers impact—20% error reductions, 25% efficiency gains. With Python, React, and IoT as my thrusters, I navigate complex challenges with finesse. Join my orbit to build the future!
-                            </p>
-                        </div>
-                        <div className="content-card mx-auto max-w-5xl mt-8 fade-in">
-                            <h2 className="text-4xl font-orbitron text-pink-500 text-center mb-6">Tech Modules</h2>
-                            <div className="flex flex-wrap justify-center gap-6">
-                                {skills.map(skill => (
-                                    <a key={skill.name} href={skill.link} target="_blank" className="skill-icon" aria-label={`${skill.name} icon`}>
-                                        <i className={`${skill.icon} text-4xl`}></i>
-                                        <p className="text-sm mt-2">{skill.name}</p>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="projects" className="py-20 px-4">
-                        <div className="mx-auto max-w-5xl">
-                            <h2 className="text-4xl font-orbitron text-pink-500 text-center mb-6">Mission Dossiers</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {projects.map(project => (
-                                    <div key={project.title} className="project-card content-card flex fade-in">
-                                        <img src={project.image} alt={project.alt} className="w-1/2 object-cover h-64" onError={e => e.target.src = "https://via.placeholder.com/300x300?text=Project+Image"} loading="lazy" />
-                                        <div className="w-1/2 p-4">
-                                            {project.logo && <img src={project.logo} alt={`${project.title} Logo`} className="w-24 mb-4" onError={e => e.target.src = "https://via.placeholder.com/100x40?text=Logo"} />}
-                                            <h3 className="text-2xl font-orbitron text-pink-500">{project.title}</h3>
-                                            <p>{project.description}</p>
-                                            <p><strong>Tools:</strong> {project.tools}</p>
-                                            <p><strong>Process:</strong> {project.process}</p>
-                                            <a href={project.link} target="_blank" className="text-purple-500 hover:text-pink-500">View Code</a>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="live-code" className="py-20 px-4">
-                        <div className="content-card mx-auto max-w-5xl fade-in">
-                            <h2 className="text-4xl font-orbitron text-pink-500 text-center mb-6">Live Code Stream</h2>
-                            <p className="text-center mb-4">Witness my coding prowess in real-time (WebRTC not supported? View a snippet below).</p>
-                            <div id="live-code-container" className="bg-gray-900 p-4 rounded-lg">
-                                <video id="live-code-video" className="w-full h-64" controls poster="assets/images/code-placeholder.png">
-                                    <source src="assets/videos/code-demo.mp4" type="video/mp4" />
-                                    Your browser does not support video playback.
-                                </video>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="contact" className="py-20 px-4">
-                        <div className="content-card mx-auto max-w-5xl fade-in">
-                            <h2 className="text-4xl font-orbitron text-pink-500 text-center mb-6">Communication Console</h2>
-                            <p className="text-center mb-4">Transmit your message to join my orbit.</p>
-                            <form action="https://formspree.io/f/your-form-id" method="POST" className="max-w-lg mx-auto">
-                                <div className="mb-4">
-                                    <input type="text" name="name" placeholder="Name" required className="w-full p-2 bg-gray-800 border border-purple-500 rounded text-white" aria-label="Name" />
-                                </div>
-                                <div className="mb-4">
-                                    <input type="email" name="email" placeholder="Email" required className="w-full p-2 bg-gray-800 border border-purple-500 rounded text-white" aria-label="Email" />
-                                </div>
-                                <div className="mb-4">
-                                    <textarea name="message" placeholder="Message" required className="w-full p-2 bg-gray-800 border border-purple-500 rounded text-white h-32" aria-label="Message"></textarea>
-                                </div>
-                                <button type="submit" className="btn-neon w-full">Transmit</button>
-                            </form>
-                            <div className="flex justify-center gap-4 mt-6">
-                                <a href="https://github.com/stephen-wa" target="_blank" className="text-2xl text-purple-500 hover:text-pink-500" aria-label="GitHub"><i className="fab fa-github"></i></a>
-                                <a href="https://linkedin.com/in/stephen-wa" target="_blank" className="text-2xl text-purple-500 hover:text-pink-500" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </section>
+    <header>
+        <h1>Stephen Wa's Portfolio</h1>
+        <p>Front-End Developer & AI Innovator</p>
+    </header>
+    <nav role="navigation" aria-label="Main navigation">
+        <a onclick="showSection('home')" class="active" aria-current="page">Home</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('certifications')">Certifications</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+    <main>
+        <section class="section active" id="home">
+            <div class="fade-in" id="homeContent">
+                <h2>Welcome to My Portfolio</h2>
+                <p>I am Stephen Wa, a front-end developer and AI innovator based in Nairobi, Kenya. Specializing in crafting intuitive, responsive web interfaces, I integrate artificial intelligence to create impactful solutions for businesses and communities. My work reflects a unique blend of technical precision and creative vision, driven by a passion for empowering users through technology. Explore my portfolio to discover how I transform ideas into reality.</p>
+                <button onclick="showContent('homeContent')" aria-label="Learn more about Stephen Wa">Explore My Work</button>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="fade-in" id="aboutContent">
+                <h2>About Me</h2>
+                <p>As a Kenyan entrepreneur, I bring a dynamic perspective to front-end development and AI innovation. Currently advancing my expertise through a professional front-end development program, I excel in HTML, CSS, JavaScript, and modern frameworks to deliver seamless user experiences. My flagship project, Axentis, showcases my ability to develop AI-driven tools that streamline business processes. With a commitment to sustainability and community impact, I aim to create technology that drives progress and empowers users worldwide.</p>
+                <button onclick="showContent('aboutContent')" aria-label="Discover more about Stephen Wa">Discover My Journey</button>
+            </div>
+        </section>
+        <section class="section projects" id="projects">
+            <div class="fade-in" id="projectsContent">
+                <h2>My Projects</h2>
+                <p>My projects demonstrate my expertise in combining front-end development with AI to solve real-world challenges. Each initiative is designed with user needs in mind, delivering both functionality and aesthetic appeal.</p>
+                <div class="project-card" id="project1">
+                    <img src="https://via.placeholder.com/600x300?text=Axentis+Project" alt="Axentis AI Auditing Platform">
+                    <h3>Axentis</h3>
+                    <p>Axentis is an AI-powered auditing platform that streamlines financial oversight for small businesses. By leveraging machine learning, it automates anomaly detection and generates detailed reports, reducing auditing time by 30%. I designed and developed the responsive web interface using HTML, CSS, and JavaScript, ensuring accessibility and ease of use for non-technical users.</p>
                 </div>
-            );
-        };
-
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+                <div class="project-card" id="project2">
+                    <img src="https://via.placeholder.com/600x300?text=Smart+Agriculture" alt="Smart Agriculture System">
+                    <h3>Smart Agriculture System</h3>
+                    <p>This IoT-driven project empowers farmers with real-time data on soil health and weather conditions. The web dashboard, built with responsive design principles, enables data-driven decisions, increasing crop yields by up to 20%. My role included developing the front-end interface and integrating APIs for seamless data visualization.</p>
+                </div>
+                <button onclick="showContent('projectsContent')" aria-label="View more projects">View More Projects</button>
+            </div>
+        </section>
+        <section class="section certifications" id="certifications">
+            <div class="fade-in" id="certificationsContent">
+                <h2>Certifications</h2>
+                <p>My commitment to continuous learning is reflected in my professional certifications, which enhance my skills in web development and AI.</p>
+                <ul>
+                    <li>Certified Front-End Developer – Codecademy (2024)</li>
+                    <li>AI for Business – Coursera (2023)</li>
+                    <li>Responsive Web Design – freeCodeCamp (2023)</li>
+                </ul>
+                <button onclick="showContent('certificationsContent')" aria-label="View more certifications">Explore Certifications</button>
+            </div>
+        </section>
+        <section class="section contact" id="contact">
+            <div class="fade-in" id="contactContent">
+                <h2>Contact Me</h2>
+                <p>I'm eager to collaborate on innovative projects in web development and AI. Whether you're seeking a skilled bamboo developer or exploring partnership opportunities, let's connect to bring your vision to life.</p>
+                <p><b>Email:</b> <a href="mailto:stephenwa268@gmail.com">stephenwa268@gmail.com</a></p>
+                <p><b>Phone:</b> (123) 456-7890</p>
+                <p><b>Location:</b> Nairobi, Kenya</p>
+                <p><b>Connect:</b> <a href="https://github.com/stephenwa" target="_blank" rel="noopener">GitHub</a> | <a href="https://linkedin.com/in/stephenwa" target="_blank" rel="noopener">LinkedIn</a></p>
+                <button onclick="showContent('contactContent')" aria-label="Get in touch with Stephen Wa">Get in Touch</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Stephen Wa. All rights reserved.</p>
+    </footer>
     <script>
-        // WebGL Background
-        try {
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('webgl-canvas'), alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.position.z = 5;
-
-            // Stars
-            const starGeometry = new THREE.BufferGeometry();
-            const starMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.02 });
-            const starVertices = [];
-            for (let i = 0; i < 1000; i++) {
-                starVertices.push((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
-            }
-            starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
-            const stars = new THREE.Points(starGeometry, starMaterial);
-            scene.add(stars);
-
-            // Planet
-            const planetGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-            const planetMaterial = new THREE.MeshBasicMaterial({ color: 0xff007a });
-            const planet = new THREE.Mesh(planetGeometry, planetMaterial);
-            planet.position.set(2, 0, -2);
-            scene.add(planet);
-
-            // Spaceship
-            const shipGeometry = new THREE.BoxGeometry(0.2, 0.1, 0.3);
-            const shipMaterial = new THREE.MeshBasicMaterial({ color: 0xa100ff });
-            const spaceship = new THREE.Mesh(shipGeometry, shipMaterial);
-            spaceship.position.set(-3, 0, -2);
-            scene.add(spaceship);
-
-            function animate() {
-                requestAnimationFrame(animate);
-                stars.rotation.y += 0.001;
-                planet.rotation.y += 0.005;
-                spaceship.position.x += 0.01;
-                if (spaceship.position.x > 5) spaceship.position.x = -5;
-                renderer.render(scene, camera);
-            }
-            animate();
-
-            window.addEventListener('resize', () => {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-            });
-        } catch (e) {
-            console.warn('WebGL failed:', e);
-            document.getElementById('webgl-canvas').style.background = 'radial-gradient(circle, #2a0040, #1a1a1a)';
-        }
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', e => {
-                e.preventDefault();
-                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Scroll Animations
-        window.addEventListener('scroll', () => {
-            document.querySelectorAll('.fade-in').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight * 0.8) {
-                    el.classList.add('visible');
+        document.addEventListener('DOMContentLoaded', () => {
+            function showSection(sectionId) {
+                try {
+                    const sections = document.querySelectorAll('.section');
+                    const navLinks = document.querySelectorAll('nav a');
+                    sections.forEach(section => {
+                        section.classList.toggle('active', section.id === sectionId);
+                        const content = section.querySelector('.fade-in');
+                        if (section.id === sectionId) {
+                            setTimeout(() => {
+                                content.classList.add('visible');
+                                section.querySelectorAll('.project-card').forEach((card, index) => {
+                                    setTimeout(() => card.classList.add('visible'), index * 200);
+                                });
+                            }, 100);
+                        } else {
+                            content.classList.remove('visible');
+                            section.querySelectorAll('.project-card').forEach(card => card.classList.remove('visible'));
+                        }
+                    });
+                    navLinks.forEach(link => {
+                        const onclickAttr = link.getAttribute('onclick');
+                        const isActive = onclickAttr && onclickAttr.includes(`'${sectionId}'`);
+                        link.classList.toggle('active', isActive);
+                    });
+                } catch (error) {
+                    console.error('Error in showSection:', error);
                 }
+            }
+            function showContent(contentId) {
+                try {
+                    const content = document.getElementById(contentId);
+                    if (content) {
+                        content.classList.add('visible');
+                        const projectCards = content.querySelectorAll('.project-card');
+                        projectCards.forEach((card, index) => {
+                            setTimeout(() => card.classList.add('visible'), index * 200);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error in showContent:', error);
+                }
+            }
+            // Show home section by default
+            showSection('home');
+            // Ensure keyboard accessibility
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const onclickAttr = link.getAttribute('onclick');
+                        if (onclickAttr) {
+                            const sectionIdMatch = onclickAttr.match(/'([^']+)'/);
+                            if (sectionIdMatch) {
+                                showSection(sectionIdMatch[1]);
+                            }
+                        }
+                    }
+                });
             });
         });
     </script>
