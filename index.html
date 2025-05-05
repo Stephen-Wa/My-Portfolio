@@ -2,251 +2,276 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="portfolio, victor, waichigo, kamauvick, shiggz, django, vick, victor waichigo, victor kamau">
-    <title>Kamauvick</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
-    <!--Dev icons -->
-    <link rel="stylesheet"
-        href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <link href="assets/font/stylesheet.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Wa's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #1C2526;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(90deg, #1C2526, #3A4A4B);
+            color: #ffffff;
+            text-align: center;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+        nav {
+            background-color: #f0f0f0;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 25px;
+            text-decoration: none;
+            color: #1C2526;
+            font-weight: 700;
+            cursor: pointer;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a:hover, nav a:focus {
+            color: #D4A017;
+            outline: 2px solid #D4A017;
+        }
+        nav a.active {
+            background-color: #D4A017;
+            color: #1C2526;
+        }
+        .section {
+            background: linear-gradient(45deg, #1C2526, #3A4A4B);
+            background-size: 200% 200%;
+            animation: gradientFade 10s ease infinite;
+            padding: 80px 40px;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        @keyframes gradientFade {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .section h2 {
+            font-size: 2.5em;
+            margin: 0 0 30px;
+        }
+        .section p {
+            font-size: 1.3em;
+            margin: 15px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section button {
+            padding: 12px 30px;
+            font-size: 1.2em;
+            background-color: #D4A017;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .section button:hover, .section button:focus {
+            background-color: #B88B14;
+            transform: scale(1.05);
+            outline: 2px solid #ffffff;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+        .projects .project-card {
+            background-color: #f9f9f9;
+            color: #1C2526;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .projects .project-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .projects img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .certifications ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .certifications li {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .contact a {
+            color: #D4A017;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact a:hover, .contact a:focus {
+            color: #B88B14;
+            outline: 2px solid #B88B14;
+        }
+        footer {
+            background-color: #1C2526;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 20px;
+            }
+            .projects .project-card {
+                max-width: 90%;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!--Navbar -->
-
-    <!--End Navbar -->
-
-    <!--Landing page -->
-    <div class="background">
-        <div id="particles">
-            <div class="overlay">
-                <div class="content">
-                    <div class="lines">
-                        <hr id="big-line">
-                        <hr id="small-line">
-                    </div>
-                    <div class="home-content">
-                        <h1 class="text-center text-white  home-text-large" id="hello">H<span id="e">e</span>ll<span
-                                id="e" color="#f96d15;">o</span>,
-                        </h1>
-                        <h2 class="text-center text-white home-text" id="iam">I'm <span id="o">Muchera-Brian</span>, and i'm a
-                        </h2>
-                        <h2 class="text-center text-white home-text"><span class="angle-b">&lt; </span>
-                            <span id="dev" class="txt-rotate" data-period="2000"
-                                data-rotate='[ "Pythonista", "Developer.", "Learner." ]'> </span>
-                            <span class="angle-b"> &gt;</span></h2>
-                    </div>
+    <header>
+        <h1>Stephen Wa's Portfolio</h1>
+        <p>Front-End Developer & AI Innovator</p>
+    </header>
+    <nav role="navigation" aria-label="Main navigation">
+        <a onclick="showSection('home')" class="active" aria-current="page">Home</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('certifications')">Certifications</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+    <main>
+        <section class="section active" id="home">
+            <div class="fade-in" id="homeContent">
+                <h2>Welcome to My Portfolio</h2>
+                <p>I am Stephen Wa, a front-end developer and AI innovator based in Nairobi, Kenya. Specializing in crafting intuitive, responsive web interfaces, I integrate artificial intelligence to create impactful solutions for businesses and communities. My work reflects a unique blend of technical precision and creative vision, driven by a passion for empowering users through technology. Explore my portfolio to discover how I transform ideas into reality.</p>
+                <button onclick="showContent('homeContent')" aria-label="Learn more about Stephen Wa">Explore My Work</button>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="fade-in" id="aboutContent">
+                <h2>About Me</h2>
+                <p>As a Kenyan entrepreneur, I bring a dynamic perspective to front-end development and AI innovation. Currently advancing my expertise through a professional front-end development program, I excel in HTML, CSS, JavaScript, and modern frameworks to deliver seamless user experiences. My flagship project, Axentis, showcases my ability to develop AI-driven tools that streamline business processes. With a commitment to sustainability and community impact, I aim to create technology that drives progress and empowers users worldwide.</p>
+                <button onclick="showContent('aboutContent')" aria-label="Discover more about Stephen Wa">Discover My Journey</button>
+            </div>
+        </section>
+        <section class="section projects" id="projects">
+            <div class="fade-in" id="projectsContent">
+                <h2>My Projects</h2>
+                <p>My projects demonstrate my expertise in combining front-end development with AI to solve real-world challenges. Each initiative is designed with user needs in mind, delivering both functionality and aesthetic appeal.</p>
+                <div class="project-card" id="project1">
+                    <img src="https://via.placeholder.com/600x300?text=Axentis+Project" alt="Axentis AI Auditing Platform">
+                    <h3>Axentis</h3>
+                    <p>Axentis is an AI-powered auditing platform that streamlines financial oversight for small businesses. By leveraging machine learning, it automates anomaly detection and generates detailed reports, reducing auditing time by 30%. I designed and developed the responsive web interface using HTML, CSS, and JavaScript, ensuring accessibility and ease of use for non-technical users.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- End Landing page -->
-
-    <!-- About-->
-    <section id="about">
-
-        <div class="about-content ml-4">
-            <h3 class="pt-5 pb-4 about-header text-center">About Me</h3>
-            <div id="about-desc" class="">
-                <p class="about-text pb-5 pt-3 mx-2">
-                    I am a <span class="whoami"><u>Software engineer </u></span>   and a <span class="whoami"><u>full stack developer</u></span>. <br>
-                    I love figuring out the building blocks of things
-                    and <br> rearranging them to make something even better.<br><br>
-                    I am very interested in the intersection of code, science <br> and agriculture.<br>
-                    When not writing code, i enjoy watching movies, listening to music and <br> riding bikes.
-                </p>
-            </div>
-        </div>
-        <div id="line-divider"></div>
-        <!-- <div class="skills mr-4"> -->
-        <div class="skill-details">
-            <h3 class="skills-header text-center pt-5 pb-4">Skills</h3>
-            <div class="container">
-                <div>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                                <figure>
-                                    <i class="devicon-html5-plain colored"></i>
-                                    <figcaption class="text-center">HTML5</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                
-                                <figure>
-                                    <i class="devicon-css3-plain colored"></i>
-                                    <figcaption class="text-center">CSS3</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                
-                                <figure>
-                                    <i class="devicon-git-plain colored"></i>
-                                    <figcaption class="text-center">Git</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-                
-                                <figure>
-                                    <i class="devicon-javascript-plain colored"></i>
-                                    <figcaption class="text-center">Javascript</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                
-                
-                    </ul>
+                <div class="project-card" id="project2">
+                    <img src="https://via.placeholder.com/600x300?text=Smart+Agriculture" alt="Smart Agriculture System">
+                    <h3>Smart Agriculture System</h3>
+                    <p>This IoT-driven project empowers farmers with real-time data on soil health and weather conditions. The web dashboard, built with responsive design principles, enables data-driven decisions, increasing crop yields by up to 20%. My role included developing the front-end interface and integrating APIs for seamless data visualization.</p>
                 </div>
-                <div>
-                    <ul class="list-unstyled list-inline text-center">
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-angularjs-plain colored"></i>
-                                    <figcaption class="text-center">Angular</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-python-plain colored"></i>
-                                    <figcaption class="text-center">Python</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-django-plain colored"></i>
-                                    <figcaption class="text-center">Django</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="mx-2">
-
-                                <figure>
-                                    <i class="devicon-postgresql-plain colored"></i>
-                                    <figcaption class="text-center">Postgres</figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <button onclick="showContent('projectsContent')" aria-label="View more projects">View More Projects</button>
             </div>
-        </div>
-        </div>
-        </div>
-    </section>
-    <!-- End About -->
-
-
-
-    <!-- Projects -->
-
-    <!-- End Projects -->
-
-    <!-- Skills -->
-
-    <!-- End Skills -->
-
-    <!-- Metrics -->
-
-    <!-- End mertics -->
-
-    <!-- Contacts -->
-    <section id="contact">
-        <div class="contact-details">
-            <h3 class="contacts-header text-center pt-5 pb-2 mt-5 mb-1">Contact Me</h3>
-            <div class="contacts">
-                <!-- Footer -->
-                <footer class="page-footer font-small  pt-4">
-
-                    <!-- Footer Elements -->
-                    <div class="container">
-
-                        <!-- Social buttons -->
-                        <ul class="list-unstyled list-inline text-center">
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-tw mx-1" href="https://twitter.com/mucherabrian"
-                                    target="_blank">
-                                    <i class="fab fa-twitter" style="color: #1da1f2;"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-gmail mx-1" href="mailto:mucherabrian2@gmail.com" target="_blank">
-                                    <i class="fa fa-envelope" style="color: red;"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/in/Brian-Muchera/"
-                                    target="_blank">
-                                    <i class="fab fa-linkedin-in" style="color: #0077b5;"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="btn-floating btn-dribbble mx-1" href="https://github.com/Brian-Muchera"
-                                    target="_blank">
-                                    <i class="fab fa-github" style="color: black;"> </i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- Social buttons -->
-
-                    </div>
-                    <!-- Footer Elements -->
-
-                    <!-- Copyright -->
-                    <div class="footer-copyright text-center py-3 mt-4">© 2020 Copyright:
-                        <a style="color: #f96d15;"> Muchera-Brian</a>
-                    </div>
-                    <!-- Copyright -->
-
-                </footer>
-                <!-- Footer -->
+        </section>
+        <section class="section certifications" id="certifications">
+            <div class="fade-in" id="certificationsContent">
+                <h2>Certifications</h2>
+                <p>My commitment to continuous learning is reflected in my professional certifications, which enhance my skills in web development and AI.</p>
+                <ul>
+                    <li>Certified Front-End Developer – Codecademy (2024)</li>
+                    <li>AI for Business – Coursera (2023)</li>
+                    <li>Responsive Web Design – freeCodeCamp (2023)</li>
+                </ul>
+                <button onclick="showContent('certificationsContent')" aria-label="View more certifications">Explore Certifications</button>
             </div>
-        </div>
-        </div>
-    </section>
-    <!-- End Contacts -->
-
-
-    <!--******* Scripts Section *******-->
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-    <script src="js/particles.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
+        </section>
+        <section class="section contact" id="contact">
+            <div class="fade-in" id="contactContent">
+                <h2>Contact Me</h2>
+                <p>I'm eager to collaborate on innovative projects in web development and AI. Whether you're seeking a skilled developer or exploring partnership opportunities, let's connect to bring your vision to life.</p>
+                <p><b>Email:</b> <a href="mailto:stephenwa268@gmail.com">stephenwa268@gmail.com</a></p>
+                <p><b>Phone:</b> (123) 456-7890</p>
+                <p><b>Location:</b> Nairobi, Kenya</p>
+                <p><b>Connect:</b> <a href="https://github.com/stephenwa" target="_blank" rel="noopener">GitHub</a> | <a href="https://linkedin.com/in/stephenwa" target="_blank" rel="noopener">LinkedIn</a></p>
+                <button onclick="showContent('contactContent')" aria-label="Get in touch with Stephen Wa">Get in Touch</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Stephen Wa. All rights reserved.</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('nav a');
+            sections.forEach(section => {
+                section.classList.toggle('active', section.id === sectionId);
+                const content = section.querySelector('.fade-in');
+                if (section.id === sectionId) {
+                    setTimeout(() => {
+                        content.classList.add('visible');
+                        section.querySelectorAll('.project-card').forEach((card, index) => {
+                            setTimeout(() => card.classList.add('visible'), index * 200);
+                        });
+                    }, 100);
+                } else {
+                    content.classList.remove('visible');
+                    section.querySelectorAll('.project-card').forEach(card => card.classList.remove('visible'));
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('onclick').includes(sectionId));
+            });
+        }
+        function showContent(contentId) {
+            const content = document.getElementById(contentId);
+            content.classList.add('visible');
+            const projectCards = content.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                setTimeout(() => card.classList.add('visible'), index * 200);
+            });
+        }
+        // Show home section by default
+        showSection('home');
+        // Ensure keyboard accessibility
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const sectionId = link.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    showSection(sectionId);
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
